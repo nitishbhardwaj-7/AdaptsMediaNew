@@ -1,6 +1,6 @@
 "use client"; // <--- This line fixes the error
 
-import React from 'react';
+
 import AwardCard from '../cards/AwardCard';
 
 // --- Sub-component for Service List Items ---

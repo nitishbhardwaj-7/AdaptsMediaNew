@@ -1,6 +1,10 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-const OrangeVideo = ({ children }) => {
+interface OrangeWithProps {
+  children: ReactNode;
+}
+
+const OrangeVideo = ({ children }: OrangeWithProps) => {
   return (
     <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
       {/* 1. The Video Background */}

@@ -1,7 +1,7 @@
 "use client"; // <--- Add this line at the very top
 
 import Image from 'next/image';
-import React from 'react';
+
 
 const brands = [
   { name: 'OSN', logo: '/images/osn.svg' },
