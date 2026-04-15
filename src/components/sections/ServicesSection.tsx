@@ -1,3 +1,4 @@
+import ArrowButton from "../buttons/ArrowButton";
 
 
 const services = [
@@ -61,16 +62,16 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div key={index} className="flex flex-col">
               {/* Large Background Number */}
-              <span className="text-7xl font-normal opacity-80 mb-2 leading-none text-white blur-xs">
+              <span className="text-7xl font-normal transform -translate-x-8 opacity-80 mb-2 leading-none text-white blur-xs">
                 {service.number}
               </span>
               
-              <h3 className="text-2xl md:text-5xl font-light mb-8 pl-10 leading-snug min-h-[4rem] w-82">
+              <h3 className="text-2xl md:text-5xl font-light mb-8 leading-snug min-h-[4rem] w-82">
                 {service.title}
               </h3>
 
               {/* List Items */}
-              <div className="flex flex-col pl-10">
+              <div className="flex flex-col">
                 {service.items.map((item, itemIndex) => (
                   <div
                     key={itemIndex}
@@ -94,11 +95,9 @@ const ServicesSection = () => {
 
       <div className="flex justify-center gap-6">
 
-         <button className="flex items-center gap-[7px] border border-white/50 bg-white/5 text-white rounded-full px-5 py-2.5 text-[18px] font-normal cursor-pointer tracking-[0.02em] font-['DM_Sans'] whitespace-nowrap">
-                      Explore All Services ↗
-                    </button>
+         <ArrowButton title="Explore All Services"/>
 
-                    <button className="flex items-center gap-[7px] border font-bold border-white/50 bg-[#fac02d] text-[#064ed4] rounded-full px-5 py-2.5 text-[18px] cursor-pointer tracking-[0.02em] font-['DM_Sans'] whitespace-nowrap">
+                    <button className="flex items-center gap-[7px] border font-bold border-none bg-[#fac02d] text-[#064ed4] rounded-full px-5 py-2.5 text-[18px] cursor-pointer tracking-[0.02em] font-['DM_Sans'] whitespace-nowrap">
                       Start a Project ↗
                     </button>
 

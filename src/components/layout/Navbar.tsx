@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 
 const NavLogo = () => (
-  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <svg width="42" height="42" viewBox="0 0 36 36" fill="none">
     <circle cx="18" cy="18" r="17" stroke="white" strokeWidth="1.2" opacity="0.7" />
     <g transform="translate(18,18)">
       {[0, 45, 90, 135, 180, 225, 270, 315].map((a, i) => (
@@ -14,7 +14,7 @@ const NavLogo = () => (
 );
 
 const menuBar: CSSProperties = {
-  display: "block", width: 18, height: 2,
+  display: "block", width: 22, height: 2,
   background: "#fff", borderRadius: 2,
 };
 
@@ -31,16 +31,16 @@ const Navbar = () => {
         display: "flex", 
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "14px 28px", 
+        padding: "14px 108px", 
         background: "#0000",
         boxSizing: "border-box" // Prevents padding from adding to the 100% width
       }}>
         <NavLogo />
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
           <button style={{
             display: "flex", alignItems: "center", gap: 8,
             background: "#3b6ef5", color: "#fff", border: "none",
-            borderRadius: 100, padding: "10px 20px", fontSize: 14,
+            borderRadius: 100, padding: "10px 20px", fontSize: 20,
             fontWeight: 500, cursor: "pointer", letterSpacing: "0.01em",
             fontFamily: "'DM Sans', sans-serif",
           }}>
@@ -59,7 +59,7 @@ const Navbar = () => {
           </button>
 
           <button style={{
-            width: 42, height: 42, background: "#f5a623", border: "none",
+            width: 48, height: 48, background: "#f5a623", border: "none",
             borderRadius: "50%", display: "flex", flexDirection: "column",
             alignItems: "center", justifyContent: "center", gap: 4, cursor: "pointer",
           }} aria-label="Menu">

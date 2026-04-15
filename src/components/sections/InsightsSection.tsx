@@ -1,3 +1,5 @@
+import ArrowButton from "../buttons/ArrowButton";
+import Tailwind3DCard from "../cards/Tailwind3DCard";
 
 
 const insights = [
@@ -11,7 +13,7 @@ const insights = [
   },
   {
     title: "Top AI Tools Digital Marketers Should Be Using Today!",
-    image: "https://images.unsplash.com/photo-1675557009875-436f09789900?q=80&w=1000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1698628472751-b65c74f247a9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "4 Simple Steps to Optimize Your Dubai Business for Web",
@@ -43,34 +45,16 @@ const InsightsSection = () => {
             </h2>
           </div>
 
-          <button className="flex items-center gap-2 border border-white/40 hover:bg-white/10 rounded-full px-8 py-3 text-sm font-medium transition-all self-start md:mb-4">
-            Read More
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
-          </button>
+          <ArrowButton title="Read More"/>
         </div>
-
         {/* Insights Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {insights.map((item, index) => (
-            <div key={index} className="flex flex-col gap-6 group cursor-pointer">
-              {/* Image Container */}
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                />
-              </div>
-
-              {/* Title */}
-              <h3 className="text-lg md:text-xl font-light leading-snug text-gray-200 group-hover:text-white transition-colors line-clamp-3">
-                {item.title}
-              </h3>
-            </div>
+            <Tailwind3DCard 
+              key={index} 
+              title={item.title} 
+              image={item.image} 
+            />
           ))}
         </div>
 

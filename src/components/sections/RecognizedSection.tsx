@@ -1,6 +1,7 @@
 "use client"; // <--- This line fixes the error
 
 
+import ArrowButton from '../buttons/ArrowButton';
 import AwardCard from '../cards/AwardCard';
 
 // --- Sub-component for Service List Items ---
@@ -104,10 +105,7 @@ export default function RecognizedSection() {
               </div>
               <h2 className="text-5xl md:text-7xl font-medium leading-[1.05] tracking-tight max-w-2xl">{pageData.awards.heading}</h2>
             </div>
-            <button className="flex items-center gap-2.5 bg-white/5 border border-white/40 hover:bg-white/10 rounded-full px-7 py-3 text-sm font-medium">
-              Explore More
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" /></svg>
-            </button>
+            <ArrowButton title='Explore More'/>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {awardsData.map((award, index) => (

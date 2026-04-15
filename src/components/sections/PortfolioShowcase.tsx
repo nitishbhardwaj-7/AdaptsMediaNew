@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import ArrowButton from "../buttons/ArrowButton";
+import ArrowIcon from "../icons/ArrowIcon";
 
 /* ─────────────────────────────────────────────
    Note: Ensure the fonts (DM Sans & Cormorant Garamond) 
@@ -49,17 +51,10 @@ const TagIcon = () => (
   </svg>
 );
 
-const ArrowIcon = ({ direction = "right" }: { direction?: "left" | "right" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-    className={direction === "left" ? "rotate-180" : ""}>
-    <line x1="5" y1="12" x2="19" y2="12" />
-    <polyline points="12 5 19 12 12 19" />
-  </svg>
-);
+
 
 const FlowerLogo = () => (
-  <svg className="ml-[34px]" width="90" height="104" viewBox="0 0 52 52" fill="none">
+  <svg width="90" height="104" viewBox="0 0 52 52" fill="none">
     <circle cx="26" cy="26" r="25" stroke="white" strokeWidth="1.5" />
     <g transform="translate(26,26)">
       {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
@@ -107,59 +102,82 @@ export default function PortfolioShowcase() {
                   Portfolio
                 </span>
                 <div className="flex-[0_0_60px] h-[1px] bg-[#f5a623]/50" />
-                <button className="flex items-center gap-1.5 border border-white/55 bg-transparent text-white rounded-full px-4 py-[7px] text-[13px] font-normal cursor-pointer tracking-[0.02em] font-['DM_Sans']">
-                  View Portfolio ↗
-                </button>
+               <ArrowButton title="View Portfolio"/>
               </div>
 
               {/* Bottom content */}
-              <div className="absolute bottom-0 left-[60px] right-0 p-[60px] z-[4] flex flex-col gap-4">
-                {/* Brand */}
-                <div className="items-center gap-[14px]">
-                  <FlowerLogo />
-                  <span className="font-['DM_Sans'] text-[26px] font-normal tracking-[0.22em] text-white/90 uppercase">
-                    {p.brand}
-                  </span>
-                </div>
+              <div className="absolute bottom-0 left-0 right-0 p-[60px] z-[4] flex flex-col gap-4">
+  
+  {/* Brand Section: Aligned with tagline */}
+ {/* ml-[84px] aligns the center-block with the start of your tagline */}
+<div className="flex flex-col items-center gap-[14px] ml-[84px] w-fit"> 
+  
+  {/* Logo stays perfectly centered above the text */}
+  <div className="flex-shrink-0">
+    <FlowerLogo />
+  </div>
+
+  {/* Brand Name */}
+  <span className="font-['DM_Sans'] text-[26px] font-normal tracking-[0.22em] text-white/90 uppercase leading-none text-center">
+    {p.brand}
+  </span>
+</div>
 
                 {/* Divider */}
                 
 
                 {/* Footer row */}
-                <div className="flex items-end justify-between gap-4 flex-wrap">
-                  {/* Left: tagline + tags */}
-                  <div className="flex flex-col gap-[14px]">
-                    <div className="w-full h-[1px] bg-white/15" />
-                    <h2 className="font-['Cormorant_Garamond'] text-[clamp(26px,4vw,40px)] font-normal text-white leading-[1.15] tracking-[-0.01em] max-w-[620px] m-0">
-                      {p.tagline}
-                    </h2>
+<div className="flex items-center justify-between gap-8 flex-wrap">
+  
+  {/* Left Section: Arrow + Tagline Block */}
+  <div className="flex items-center gap-8 flex-1">
+    
+    {/* LEFT ARROW */}
+    <button 
+      onClick={prev} 
+      aria-current="step"
+      className="mb-10 w-[52px] h-[52px] border border-white/40 bg-transparent rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-white/10 transition-colors shrink-0"
+    >
+      <ArrowIcon direction="left" />
+    </button>
 
-                    <div className="w-full h-[1px] bg-white/15" />
+    {/* tagline + tags block */}
+    <div className="flex flex-col gap-[14px] flex-1">
+      <div className="w-full h-[1px] bg-white/15" />
+      
+      {/* We keep the text and tags in this column, 
+          but items-center on the parent now aligns the arrow 
+          to the middle of this entire stack. */}
+      <h2 className="font-['Cormorant_Garamond'] text-[clamp(26px,4vw,40px)] font-normal text-white leading-[1.15] tracking-[-0.01em] max-w-[640px] m-0">
+        {p.tagline}
+      </h2>
+      
+      <div className="w-full h-[1px] bg-white/15" />
 
-                    <div className="flex flex-wrap gap-2">
-                      {p.tags.map((tag) => (
-                        <span key={tag} className="flex items-center gap-1.5 border border-white/30 text-white/75 rounded-full px-3 py-[5px] text-[12px] font-normal tracking-[0.02em] bg-white/5">
-                          <TagIcon /> {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+      <div className="flex flex-wrap gap-2">
+        {p.tags.map((tag) => (
+          <span key={tag} className="flex items-center gap-1.5 border border-white/30 text-white/75 rounded-full px-3 py-[5px] text-[12px] font-normal tracking-[0.02em] bg-white/5">
+            <TagIcon /> {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
 
-                  {/* Right: nav + CTA */}
-                  <div className="flex items-center gap-3 shrink-0 mb-16">
-                    <button onClick={prev} aria-label="Previous" className="w-[42px] h-[42px] border border-white/40 bg-transparent rounded-full flex items-center justify-center text-white cursor-pointer">
-                      <ArrowIcon direction="left" />
-                    </button>
+  {/* Right: CTA + Next Arrow */}
+  {/* 2. Removed mb-10 to align with the left side */}
+  <div className="flex items-center gap-3 shrink-0 mb-10">
+    <ArrowButton title="Read Case Study"/>
 
-                    <button className="flex items-center gap-[7px] border border-white/50 bg-white/5 text-white rounded-full px-5 py-2.5 text-[18px] font-normal cursor-pointer tracking-[0.02em] font-['DM_Sans'] whitespace-nowrap">
-                      Read Case Study ↗
-                    </button>
-
-                    <button onClick={next} aria-label="Next" className="w-[42px] h-[42px] border border-white/40 bg-transparent rounded-full flex items-center justify-center text-white cursor-pointer">
-                      <ArrowIcon direction="right" />
-                    </button>
-                  </div>
-                </div>
+    {/* NEXT ARROW */}
+    <button 
+      onClick={next} 
+      className="w-[52px] h-[52px] border border-white/40 bg-transparent rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-white/10 transition-colors"
+    >
+      <ArrowIcon direction="right" />
+    </button>
+  </div>
+</div>
               </div>
             </div>
           );
