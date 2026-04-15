@@ -111,7 +111,6 @@ export default function RecognizedSection() {
           {awardsData.map((award, index) => (
             <AwardCard 
               key={index}
-              number={award.number}
               title={award.title}
               awardName={award.awardName}
               iconColor={award.iconColor} 

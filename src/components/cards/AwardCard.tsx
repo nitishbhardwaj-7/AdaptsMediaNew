@@ -1,4 +1,10 @@
-export default function AwardCard({ number, title, awardName, iconColor }: AwardCardProps) {
+type AwardCardProps = {
+  title: string;
+  awardName: string;
+  iconColor?: string;
+};
+
+export default function AwardCard({title, awardName, iconColor }: AwardCardProps) {
   return (
     /* 1. Perspective Wrapper */
     <div className="group [perspective:1000px] h-[16rem] w-[18rem]">
