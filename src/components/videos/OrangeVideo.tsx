@@ -7,26 +7,27 @@ interface OrangeWithProps {
 const OrangeVideo = ({ children }: OrangeWithProps) => {
   return (
     <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
-      {/* 1. The Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/images/hero-fallback.jpg"
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source src="/videos/orange-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      
+      {/* LAYER 0: The Background Image */}
+      <img 
+        src="/images/About_Us_Bg.png" 
+        alt="Background"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
 
-      {/* 2. The Dark Overlay (Crucial for Text Contrast) */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10" />
+      {/* LAYER 10: The Animated Element */}
+      {/* I added 'pointer-events-none' so it doesn't block clicks to your content */}
+      {/* <img 
+        src="/images/newelement.png" 
+        alt="Decorative Element"
+        className="absolute z-10 pointer-events-none" // Add your animation class here
+      /> */}
 
-      {/* 3. The Content Layer */}
-      <div className="relative z-20">
+      {/* LAYER 20: The Content Layer */}
+      <div className="relative z-20 container mx-auto px-4">
         {children}
       </div>
+      
     </section>
   );
 };

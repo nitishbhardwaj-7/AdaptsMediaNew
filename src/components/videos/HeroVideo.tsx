@@ -1,18 +1,18 @@
 const HeroVideo = () => {
   return (
-    <video
-  autoPlay
-  muted
-  loop
-  playsInline
-  // poster="/images/hero-fallback.jpg"
-  className="w-full h-full object-cover"
->
-  {/* <source src="/videos/hero-background.webm" type="video/webm" /> */}
-  <source src="/videos/hero-background.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-  )
-}
+    <section className="relative w-full h-screen overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="/videos/hero-background-new.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+  );
+};
 
-export default HeroVideo
+export default HeroVideo;

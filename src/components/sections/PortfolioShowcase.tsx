@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLenis } from "lenis/react"; // Access our smooth scroll instance
 import ArrowButton from "../buttons/ArrowButton";
 import ArrowIcon from "../icons/ArrowIcon";
 
-/* ─────────────────────────────────────────────
-   Note: Ensure the fonts (DM Sans & Cormorant Garamond) 
-   are imported in your globals.css or layout.tsx.
-───────────────────────────────────────────── */
+// Register GSAP Plugin
+gsap.registerPlugin(ScrollTrigger);
 
 interface Project {
   id: number;

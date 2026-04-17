@@ -12,12 +12,12 @@ const ArrowIcon = ({ direction = "right", onClick }: { direction?: "left" | "rig
         className="group relative w-[76px] h-[76px] flex items-center justify-center bg-transparent border-none cursor-pointer overflow-hidden outline-none active:scale-95 transition-transform"
       >
         {/* 1. RINGS (The Visual Polish) */}
-        <div className="absolute inset-[8px] rounded-full border-2 border-white/20 transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-0 group-hover:opacity-0" />
-        <div className="absolute inset-[8px] rounded-full border-[3px] border-[#3b6cf5] scale-[1.3] opacity-0 transition-all duration-1200 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-100 group-hover:opacity-100" />
+        <span className="absolute inset-[8px] rounded-full border-2 border-white/20 transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-0 group-hover:opacity-0" />
+        <span className="absolute inset-[8px] rounded-full border-[3px] border-[#3b6cf5] scale-[1.3] opacity-0 transition-all duration-1200 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-100 group-hover:opacity-100" />
 
         {/* 2. THE FILM STRIP (The Centering Fix) */}
         {/* We force the width to 152px (76 * 2) so the translation is pixel-perfect */}
-        <div 
+        <span 
           className={`absolute top-0 flex w-[152px] h-full transition-transform duration-1200 ease-[cubic-bezier(0.19,1,0.22,1)]
             ${isRight 
               ? "left-0 group-hover:-translate-x-1/2" 
@@ -27,15 +27,15 @@ const ArrowIcon = ({ direction = "right", onClick }: { direction?: "left" | "rig
           style={{ transformStyle: "preserve-3d" }}
         >
           {/* Slot 1: Default State */}
-          <div className="w-[76px] h-full flex items-center justify-center shrink-0 [transform:translateZ(20px)]">
+          <span className="w-[76px] h-full flex items-center justify-center shrink-0 [transform:translateZ(20px)]">
             <ArrowSVG direction={direction} />
-          </div>
+          </span>
 
           {/* Slot 2: Hover State */}
-          <div className="w-[76px] h-full flex items-center justify-center shrink-0 [transform:translateZ(20px)]">
+          <span className="w-[76px] h-full flex items-center justify-center shrink-0 [transform:translateZ(20px)]">
             <ArrowSVG direction={direction} />
-          </div>
-        </div>
+          </span>
+        </span>
       </button>
     </div>
   );

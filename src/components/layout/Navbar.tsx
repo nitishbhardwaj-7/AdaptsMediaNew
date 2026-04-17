@@ -1,16 +1,13 @@
+"use client";
+
+import Image from "next/image";
 import { CSSProperties } from "react";
 
 const NavLogo = () => (
-  <svg width="42" height="42" viewBox="0 0 36 36" fill="none">
-    <circle cx="18" cy="18" r="17" stroke="white" strokeWidth="1.2" opacity="0.7" />
-    <g transform="translate(18,18)">
-      {[0, 45, 90, 135, 180, 225, 270, 315].map((a, i) => (
-        <ellipse key={i} cx="0" cy="-6" rx="2.5" ry="5.5" fill="white"
-          transform={`rotate(${a})`} opacity="0.8" />
-      ))}
-      <circle cx="0" cy="0" r="2.5" fill="white" />
-    </g>
-  </svg>
+  <Image
+  src='/images/navlogo.png'
+  width={30}
+  height={20}/>
 );
 
 const menuBar: CSSProperties = {
@@ -21,21 +18,29 @@ const menuBar: CSSProperties = {
 const Navbar = () => {
   return (
     <nav style={{
-        // --- Fixed Positioning Logic ---
+        // --- Fixed Positioning ---
         position: "fixed",
         top: 0,
         left: 0,
         width: "100%",
-        zIndex: 1000, // Increased to ensure it stays above all other content
-        // -------------------------------
+        zIndex: 1000,
+        
+        // --- Layout ---
         display: "flex", 
         alignItems: "center",
         justifyContent: "space-between",
         padding: "14px 108px", 
-        background: "#0000",
-        boxSizing: "border-box" // Prevents padding from adding to the 100% width
+        background: "transparent",
+        boxSizing: "border-box",
+
+        // --- Technical Stability (Lenis Fix) ---
+        // This ensures the fixed nav doesn't "vibrate" during smooth scroll
+        transform: "translate3d(0, 0, 0)", 
+        willChange: "transform",
       }}>
+        
         <NavLogo />
+
         <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
           <button style={{
             display: "flex", alignItems: "center", gap: 8,
@@ -43,26 +48,28 @@ const Navbar = () => {
             borderRadius: 100, padding: "10px 20px", fontSize: 20,
             fontWeight: 500, cursor: "pointer", letterSpacing: "0.01em",
             fontFamily: "'DM Sans', sans-serif",
-          }}>
+            transition: "transform 0.2s ease",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
             Start a Project
-            <div style={{
-              width: 18, height: 18, background: "rgba(255,255,255,0.2)",
-              borderRadius: "50%", display: "flex",
-              alignItems: "center", justifyContent: "center",
-            }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-            </div>
+            <Image
+            src='/images/clock.png'
+            width={20}
+            height={20}
+            />
           </button>
 
           <button style={{
             width: 48, height: 48, background: "#f5a623", border: "none",
             borderRadius: "50%", display: "flex", flexDirection: "column",
             alignItems: "center", justifyContent: "center", gap: 4, cursor: "pointer",
-          }} aria-label="Menu">
+            transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+          }} 
+          onMouseEnter={(e) => (e.currentTarget.style.transform = "rotate(90deg)")}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = "rotate(0deg)")}
+          aria-label="Menu">
             <span style={menuBar} />
             <span style={menuBar} />
             <span style={menuBar} />

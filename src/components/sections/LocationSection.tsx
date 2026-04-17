@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const locations = [
   {
     city: "London",
@@ -30,7 +32,13 @@ const locations = [
 
 const LocationSection = () => {
   return (
-    <section className="bg-[#001B3D] bg-gradient-to-tr from-[#053f9c] to-[#022c57] text-white py-24 px-8 md:px-52 lg:px-52 font-sans overflow-hidden">
+    <section className="bg-[#022C56] relative text-white py-24 px-8 md:px-52 lg:px-52 font-sans overflow-hidden">
+      <Image
+              src="/images/LocationMask.png" 
+              alt="Decorative Element"
+              fill
+              className="absolute z-10 pointer-events-none" // Add your animation class here
+            />
       <div className="max-w-screen mx-auto">
         
         {/* Main Content Row */}
@@ -65,16 +73,16 @@ const LocationSection = () => {
           </div>
 
           {/* Right: Dotted World Map */}
-          <div className="w-full lg:w-1/2 relative min-h-[300px] flex items-center justify-center">
+          <div className="w-full relative min-h-[300px] flex items-center justify-center">
             {/* Dotted Map Placeholder (Using an SVG pattern or Image) */}
-            <div className="opacity-40 w-full h-full scale-125 lg:translate-x-12">
+            <div className="opacity-100 w-full h-full">
                <img 
-                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Dot_Fill_World_Map.svg/1200px-Dot_Fill_World_Map.svg.png" 
+                 src="/images/global_map.png" 
                  alt="World Map"
-                 className="w-full h-auto object-contain invert opacity-50"
+                 className="w-full  object-contain opacity-100"
                />
                {/* Location Pin */}
-               <div className="absolute top-[42%] right-[32%] w-4 h-4 bg-red-600 rounded-full border-2 border-white shadow-[0_0_10px_red]" />
+               <div className="absolute top-[46%] left-[59%] w-4 h-4 bg-red-600 rounded-full border-2 border-white shadow-[0_0_10px_red]" />
             </div>
           </div>
         </div>

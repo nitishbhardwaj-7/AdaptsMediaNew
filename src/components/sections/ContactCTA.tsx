@@ -1,8 +1,15 @@
+import Image from "next/image";
 
 
 const ContactCTA = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-[#cc3333] via-[#e63e3e] to-[#ff9000] py-24 px-8 md:px-52 lg:px-52">
+    <section className="relative overflow-hidden py-24 px-8 md:px-52 lg:px-52">
+      <Image
+        src="/images/ConnectBg.png" 
+        fill
+        alt="Decorative Element"
+        className="absolute z-10 pointer-events-none" // Add your animation class here
+      />
       
       {/* Background Handshake Image - Absolute positioned to the right */}
       <div 

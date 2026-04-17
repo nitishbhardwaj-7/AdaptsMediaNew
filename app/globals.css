@@ -25,6 +25,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* src/app/globals.css */
+
+/* Target the root and all elements */
+html,
+body,
+* {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;     /* Firefox */
+}
+
+/* Target Chrome, Safari and Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
 /* From Uiverse.io by karthik092726122003 */ 
 .styled-wrapper .button {
   display: block;
@@ -101,5 +120,15 @@ body {
 .styled-wrapper .button:focus .button-box {
   transition: 0.4s;
   transform: translateX(-69px);
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 

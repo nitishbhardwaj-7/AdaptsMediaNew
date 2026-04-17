@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/src/components/layout/Navbar";
+import SmoothScroll from "@/src/components/providers/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,11 +36,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Navbar/>
-        {/* We add a div with top padding so content isn't hidden by the fixed nav */}
-        <main style={{ paddingTop: '70px' }}> 
-          {children}
-        </main>
+        {/* Everything inside SmoothScroll will have that buttery momentum effect */}
+        <SmoothScroll>
+          <Navbar />
+          <main style={{ paddingTop: '70px' }}> 
+            {children}
+          </main>
+        </SmoothScroll>
       </body>
     </html>
   );
