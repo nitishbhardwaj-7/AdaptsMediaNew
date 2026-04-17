@@ -114,7 +114,7 @@ const ServicesSection = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16"
         >
           {services.map((service, index) => (
-            <motion.div key={index} variants={fadeInUp} className="flex flex-col">
+            <motion.div key={index} className="flex flex-col">
               {/* Large Background Number */}
               <motion.span 
                 initial={{ opacity: 0, x: -20 }}
@@ -152,7 +152,7 @@ const ServicesSection = () => {
       </div>
 
       <motion.div 
-        variants={fadeInUp}
+        
         className="flex flex-wrap justify-center gap-6"
       >
         <ArrowButton title="Explore All Services"/>

@@ -5,6 +5,7 @@ import { CSSProperties } from "react";
 
 const NavLogo = () => (
   <Image
+  alt=""
   src='/images/navlogo.png'
   width={30}
   height={20}/>
@@ -55,6 +56,7 @@ const Navbar = () => {
           >
             Start a Project
             <Image
+            alt=""
             src='/images/clock.png'
             width={20}
             height={20}
