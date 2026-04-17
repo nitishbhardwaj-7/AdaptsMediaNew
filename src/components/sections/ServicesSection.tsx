@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Added Variants import
 import ArrowButton from "../buttons/ArrowButton";
 
 const services = [
@@ -32,18 +32,24 @@ const services = [
   {
     number: "06",
     title: "Strategy & Consulting",
-    items: ['Industry and Competitor Analysis Tailor-made Growth Strategies Targeted Ads and Email Campaigns', 'Tailor-made Growth Strategies', 'Targeted Ads and Email Campaigns'],
+    items: ['Industry and Competitor Analysis', 'Tailor-made Growth Strategies', 'Targeted Ads and Email Campaigns'],
   },
-  
 ];
 
-// Animation Variants
-const fadeInUp = {
+// Animation Variants with explicit typing
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.8, 
+      ease: [0.22, 1, 0.36, 1] // Framer Motion now recognizes this correctly
+    } 
+  }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -151,10 +157,7 @@ const ServicesSection = () => {
         </motion.div>
       </div>
 
-      <motion.div 
-        
-        className="flex flex-wrap justify-center gap-6"
-      >
+      <motion.div className="flex flex-wrap justify-center gap-6">
         <ArrowButton title="Explore All Services"/>
 
         <motion.button 
