@@ -40,7 +40,7 @@ const insights = [
 
 const InsightsSection = () => {
   return (
-    <section className="relative bg-black text-white py-24 px-8 min-[1400px]:px-52 overflow-hidden font-sans flex flex-col items-start">
+    <section className="relative bg-black text-white py-20 sm:px-2 md:px-10 lg:px-30 overflow-hidden font-sans flex flex-col items-start">
       {/* Background Radial Glows */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-yellow-600/20 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-red-900/30 blur-[100px] rounded-full translate-x-1/4 -translate-y-1/4 pointer-events-none" />
@@ -55,7 +55,7 @@ const InsightsSection = () => {
       {/* Removed 'mx-auto' and 'max-w-screen' to pin content to the left.
         Changed to w-full to allow scroll to span the width.
       */}
-      <div className="w-full relative z-20">
+      <div className="relative z-20 max-w-[1700px] mx-auto px-10 md:px-10 xl:px-16">
         
         {/* Header Section: flex-col below 1400px to keep button left-aligned */}
         <div className="flex flex-col min-[1400px]:flex-row min-[1400px]:items-end justify-between gap-8 mb-16">
@@ -66,7 +66,7 @@ const InsightsSection = () => {
               </span>
               <div className="w-12 h-[1px] bg-[#f5a623]" />
             </div>
-            <h2 className="text-4xl md:text-5xl min-[1400px]:text-7xl font-medium leading-[1.1] tracking-tight max-w-3xl">
+            <h2 className="text-3xl md:text-5xl min-[1400px]:text-7xl font-medium leading-[1.1] tracking-tight max-w-[15rem]">
               Ideas, Trends & Industry Insights
             </h2>
           </div>

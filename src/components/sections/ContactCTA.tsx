@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ContactCTA = () => {
   return (
-    <section className="relative overflow-hidden py-24 px-8 min-[1400px]:px-52 w-full flex flex-col items-start bg-[#c42a27]">
+    <section className="relative group overflow-hidden py-20 px-10 md:px-10 lg:px-30 w-full flex flex-col items-start bg-[#c42a27]">
       <Image
         src="/images/ConnectBg.png" 
         fill
@@ -20,8 +20,8 @@ const ContactCTA = () => {
         }}
       />
 
-      <div className="w-full relative z-10">
-        <div className="flex flex-col gap-4 max-w-4xl items-start">
+      <div className="relative z-10 group max-w-[1700px] w-full mx-auto items-start justify-start sm:px-6 md:px-10 xl:px-16">
+        <div className="flex flex-col gap-4 max-w-4xl">
           
           {/* Top Label */}
           <div className="flex items-center gap-3">
@@ -36,8 +36,8 @@ const ContactCTA = () => {
             Ready to start your next project or still exploring ideas?{' '}
             
             {/* INLINE BUTTON REPLACEMENT */}
-            <button className="relative inline-flex items-center justify-center px-6 py-2 ml-0 overflow-hidden transition-all bg-transparent rounded-full group align-middle duration-500 cursor-pointer">
-  <span className="flex items-center gap-3 text-xl md:text-7xl font-thin italic border-b border-white/70 hover:border-transparent text-white group-hover:text-[#c42a27] transition-colors duration-500">
+            <button className="relative inline-flex items-center justify-center px-6 py-2 skew-x-[-12deg] overflow-hidden transition-all bg-transparent group align-middle duration-500 cursor-pointer">
+  <span className="flex items-center gap-3 text-xl md:text-7xl font-thin italic border-b skew-x-[12deg] border-white/70 text-white group-hover:text-[#c42a27] transition-colors duration-500">
     Let's connect
     {/* REPLACED SEARCH WITH ARROW */}
     <svg

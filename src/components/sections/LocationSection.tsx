@@ -32,14 +32,14 @@ const locations = [
 
 const LocationSection = () => {
   return (
-    <section className="bg-[#022C56] relative text-white py-24 px-6 min-w-[1400px]:px-52 lg:px-52 font-sans overflow-hidden">
+    <section className="bg-[#022C56] relative text-white py-20 px-10 md:px-10 lg:px-30 font-sans overflow-hidden">
       <Image
               src="/images/LocationMask.png" 
               alt="Decorative Element"
               fill
               className="absolute z-0 pointer-events-none" // Add your animation class here
             />
-      <div className="max-w-screen mx-auto">
+      <div className="max-w-[1700px] sm:px-6 md:px-10 xl:px-16 mx-auto">
         
         {/* Main Content Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12">
