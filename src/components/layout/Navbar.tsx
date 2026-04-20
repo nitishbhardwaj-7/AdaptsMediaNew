@@ -1,84 +1,76 @@
 "use client";
 
 import Image from "next/image";
-import { CSSProperties } from "react";
+import Link from "next/link";
 
 const NavLogo = () => (
-  <Image
-  alt=""
-  src='/images/navlogo.png'
-  width={30}
-  height={20}/>
+  <div className="relative w-[60px] h-[40px]">
+    <Image
+      alt="Company Logo"
+      src="/images/navlogo.png"
+      fill
+      priority
+      sizes="(max-width: 768px) 45px, 60px"
+      className="object-contain"
+    />
+  </div>
 );
 
-const menuBar: CSSProperties = {
-  display: "block", width: 22, height: 2,
-  background: "#fff", borderRadius: 2,
-};
-
 const Navbar = () => {
+  
+  const menuBarClass = "block w-[22px] h-[2px] bg-white rounded-[2px]";
+
   return (
-    <nav style={{
-        // --- Fixed Positioning ---
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        zIndex: 1000,
-        
-        // --- Layout ---
-        display: "flex", 
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "14px 108px", 
-        background: "transparent",
-        boxSizing: "border-box",
+    <header>
+      <nav 
+        aria-label="Main Navigation"
+        className="fixed top-0 left-0 w-full z-[1000] flex items-center justify-between bg-transparent box-border
+                   px-5 py-[12px] md:px-[108px] md:py-[14px]
+                   [transform:translate3d(0,0,0)] [will-change:transform]"
+      >
+       
+        <Link href="/" aria-label="Home" className="flex no-underline">
+          <NavLogo />
+        </Link>
 
-        // --- Technical Stability (Lenis Fix) ---
-        // This ensures the fixed nav doesn't "vibrate" during smooth scroll
-        transform: "translate3d(0, 0, 0)", 
-        willChange: "transform",
-      }}>
-        
-        <NavLogo />
-
-        <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
-          <button style={{
-            display: "flex", alignItems: "center", gap: 8,
-            background: "#3b6ef5", color: "#fff", border: "none",
-            borderRadius: 100, padding: "10px 20px", fontSize: 20,
-            fontWeight: 500, cursor: "pointer", letterSpacing: "0.01em",
-            fontFamily: "'DM Sans', sans-serif",
-            transition: "transform 0.2s ease",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+    
+        <div className="flex items-center gap-4 md:gap-[28px]">
+          
+          <button 
+            type="button"
+            className="flex items-center gap-2 bg-[#3b6ef5] text-white border-none rounded-full 
+                       px-4 py-2 md:px-5 md:py-[10px] 
+                       text-[16px] md:text-[20px] font-medium tracking-[0.01em] 
+                       cursor-pointer transition-transform duration-200 ease-in-out hover:scale-105"
           >
-            Start a Project
+            <span className="hidden sm:inline">Start a Project</span>
+            <span className="sm:hidden">Start a Project</span>
             <Image
-            alt=""
-            src='/images/clock.png'
-            width={20}
-            height={20}
+              alt="" 
+              src="/images/clock.png"
+              width={20}
+              height={20}
+              className="w-4 h-4 md:w-5 md:h-5"
             />
           </button>
 
-          <button style={{
-            width: 48, height: 48, background: "#f5a623", border: "none",
-            borderRadius: "50%", display: "flex", flexDirection: "column",
-            alignItems: "center", justifyContent: "center", gap: 4, cursor: "pointer",
-            transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-          }} 
-          onMouseEnter={(e) => (e.currentTarget.style.transform = "rotate(90deg)")}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = "rotate(0deg)")}
-          aria-label="Menu">
-            <span style={menuBar} />
-            <span style={menuBar} />
-            <span style={menuBar} />
+       
+          <button 
+            type="button"
+            aria-label="Open Menu"
+            className="w-10 h-10 md:w-12 md:h-12 bg-[#f5a623] border-none rounded-full 
+                       flex flex-col items-center justify-center gap-1 cursor-pointer 
+                       transition-transform duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] 
+                       hover:rotate-90"
+          >
+            <span className={menuBarClass} />
+            <span className={menuBarClass} />
+            <span className={menuBarClass} />
           </button>
         </div>
       </nav>
-  )
-}
+    </header>
+  );
+};
 
 export default Navbar;

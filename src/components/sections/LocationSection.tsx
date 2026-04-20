@@ -32,12 +32,12 @@ const locations = [
 
 const LocationSection = () => {
   return (
-    <section className="bg-[#022C56] relative text-white py-24 px-8 md:px-52 lg:px-52 font-sans overflow-hidden">
+    <section className="bg-[#022C56] relative text-white py-24 px-6 min-w-[1400px]:px-52 lg:px-52 font-sans overflow-hidden">
       <Image
               src="/images/LocationMask.png" 
               alt="Decorative Element"
               fill
-              className="absolute z-10 pointer-events-none" // Add your animation class here
+              className="absolute z-0 pointer-events-none" // Add your animation class here
             />
       <div className="max-w-screen mx-auto">
         

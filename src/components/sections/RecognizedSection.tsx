@@ -100,86 +100,92 @@ const pageData = {
 
 export default function RecognizedSection() {
   return (
-
-      <section className="relative text-white py-24 px-8 md:px-52 lg:px-52">
-        <Image
-        src="/images/Awards_Bg.png" // Path from public folder
-        alt="Background Description"
-        fill                          // Tells image to fill the relative parent
-        priority                      // High priority (good for sections at top of page)
-        className="object-cover z-0"  // object-cover behaves like 'background-size: cover'
-        sizes="100vw"                 // Helps Next.js optimize for the screen width
+    <section className="relative text-white py-24 px-8 min-[1300px]:px-52 w-full flex flex-col items-start justify-start">
+      <Image
+        src="/images/Awards_Bg.png"
+        alt="Background"
+        fill
+        priority
+        className="object-cover z-0"
+        sizes="100vw"
       />
-        <div className="relative z-10 max-w-screen mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-12 mb-20">
-            <div>
-              <div className="flex items-center gap-4 mb-5">
-                <span className="text-[10px] text-[#FAC02E] font-bold tracking-[0.2em] uppercase opacity-90">Awards & Recognition</span>
-                <div className="w-12 h-[0.6px] bg-[#FAC02E] translate-y-[3px]" />
-              </div>
-              <h2 className="text-5xl md:text-7xl font-medium leading-[1.05] tracking-tight max-w-2xl">{pageData.awards.heading}</h2>
+      
+      <div className="relative z-10 w-full text-left">
+        {/* Header Section */}
+        <div className="flex flex-col min-[1300px]:flex-row min-[1300px]:items-end min-[1300px]:justify-between gap-12 mb-20">
+          <div className="flex flex-col items-start">
+            <div className="flex items-center gap-4 mb-5">
+              <span className="text-[10px] text-[#FAC02E] font-bold tracking-[0.2em] uppercase opacity-90">
+                Awards & Recognition
+              </span>
+              <div className="w-12 h-[0.6px] bg-[#FAC02E] translate-y-[3px]" />
             </div>
+            <h2 className="text-4xl md:text-5xl min-[1300px]:text-7xl font-medium leading-[1.05] tracking-tight max-w-2xl">
+              {pageData.awards.heading}
+            </h2>
+          </div>
+          
+          <div className="flex justify-start">
             <ArrowButton title='Explore More'/>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        </div>
+
+        {/* --- AWARDS GRID FIX --- */}
+        {/* Added 'content-start' and 'items-stretch' to ensure rows never collapse 
+            into each other during browser zoom calculations. */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6 items-stretch content-start">
           {awardsData.map((award, index) => (
-            <AwardCard 
-              key={index}
-              awardName={award.awardName}
-              imagePath={award.imagePath} 
-            />
+            <div key={index} className="flex h-full min-h-[200px]">
+              <AwardCard 
+                awardName={award.awardName}
+                imagePath={award.imagePath} 
+              />
+            </div>
           ))}
         </div>
+
+        {/* --- PROUD PARTNERSHIPS FIX --- */}
+        <div className="mt-24 flex flex-col gap-8 items-start">
+          <span className="text-sm font-light tracking-[0.15em] opacity-90 text-white font-sans uppercase">
+            Proud Partnerships
+          </span>
+
+          {/* Changed gap to gap-y-12 for better vertical spacing when 
+              wrapped during high zoom levels. */}
+          <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-12">
+            
+            {/* Sortlist */}
+            <div className="relative w-48 h-20 shrink-0">
+              <Image 
+                src="/images/sortlist.png" 
+                alt="Sortlist"
+                fill
+                className="object-contain"
+              />
+            </div>
+
+            {/* Digital Agency Network */}
+            <div className="relative w-32 h-24 shrink-0">
+              <Image 
+                src="/images/digitalagencynetwork.png" 
+                alt="Digital Agency Network"
+                fill
+                className="object-contain"
+              />
+            </div>
+
+            {/* Semrush */}
+            <div className="relative w-22 h-16 shrink-0">
+              <Image 
+                src="/images/semrush.png" 
+                alt="Semrush"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
         </div>
-
-        {/* --- Proud Partnerships Section --- */}
-
-<div className="mt-20 flex flex-col gap-6">
-  {/* Optional Label */}
-  <span className="text-sm font-light tracking-[0.15em] opacity-90 text-white font-sans">
-    Proud Partnerships
-  </span>
-
-  <div className="flex flex-wrap items-center gap-12">
-    
-      <div className="relative w-50 h-20">
-        <Image 
-          src="/images/sortlist.png" 
-          alt="Sortlist"
-          width={200}
-          height={200}
-          className="object-contain"
-        />
       </div>
-
-    {/* 2. Digital Agency Network (White Card) */}
-   
-      <div className="relative w-40 h-24">
-        <Image 
-          src="/images/digitalagencynetwork.png" 
-          alt="Digital Agency Network"
-          width={170}
-          height={170}
-          className="object-contain"
-        />
-      </div>
-   
-
-    {/* 3. Semrush Badge (Purple Card) */}
-
-      <div className="relative w-40 h-24">
-        <Image 
-          src="/images/semrush.png" 
-          alt="Semrush"
-          width={80}
-          height={80}
-          className="object-contain"
-        />
-      </div>
-
-  </div>
-</div>
-      </section>
-   
+    </section>
   );
 }

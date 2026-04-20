@@ -1,22 +1,21 @@
 import React from "react";
 
 const ArrowIcon = ({ direction = "right", onClick }: { direction?: "left" | "right", onClick?: () => void }) => {
-  // Logic to handle the sliding direction
   const isRight = direction === "right";
 
   return (
     <div className="relative inline-block [perspective:1000px]">
-      <button
-        onClick={onClick}
-        type="button"
-        className="group relative w-[76px] h-[76px] flex items-center justify-center bg-transparent border-none cursor-pointer overflow-hidden outline-none active:scale-95 transition-transform"
+      {/* FIX: Changed <button> to <div> to avoid nested buttons. 
+          The 'group' class remains here so child spans still react to the parent button's hover.
+      */}
+      <div
+        className="group relative w-[76px] h-[76px] flex items-center justify-center bg-transparent border-none overflow-hidden outline-none transition-transform"
       >
-        {/* 1. RINGS (The Visual Polish) */}
+        {/* 1. RINGS */}
         <span className="absolute inset-[8px] rounded-full border-2 border-white/20 transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-0 group-hover:opacity-0" />
         <span className="absolute inset-[8px] rounded-full border-[3px] border-[#3b6cf5] scale-[1.3] opacity-0 transition-all duration-1200 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-100 group-hover:opacity-100" />
 
-        {/* 2. THE FILM STRIP (The Centering Fix) */}
-        {/* We force the width to 152px (76 * 2) so the translation is pixel-perfect */}
+        {/* 2. THE FILM STRIP */}
         <span 
           className={`absolute top-0 flex w-[152px] h-full transition-transform duration-1200 ease-[cubic-bezier(0.19,1,0.22,1)]
             ${isRight 
@@ -36,7 +35,7 @@ const ArrowIcon = ({ direction = "right", onClick }: { direction?: "left" | "rig
             <ArrowSVG direction={direction} />
           </span>
         </span>
-      </button>
+      </div>
     </div>
   );
 };
@@ -51,7 +50,6 @@ const ArrowSVG = ({ direction }: { direction: string }) => (
     strokeWidth="2.5"
     strokeLinecap="round"
     strokeLinejoin="round"
-    /* rotate-180 only happens if direction is left */
     className={`text-white transition-colors duration-300 ${direction === "left" ? "rotate-180" : ""}`}
   >
     <line x1="5" y1="12" x2="19" y2="12" />

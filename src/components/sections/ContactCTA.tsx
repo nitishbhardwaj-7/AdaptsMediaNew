@@ -1,27 +1,27 @@
 import Image from "next/image";
 
-
 const ContactCTA = () => {
   return (
-    <section className="relative overflow-hidden py-24 px-8 md:px-52 lg:px-52">
+    <section className="relative overflow-hidden py-24 px-8 min-[1400px]:px-52 w-full flex flex-col items-start bg-[#c42a27]">
       <Image
         src="/images/ConnectBg.png" 
         fill
         alt="Decorative Element"
-        className="absolute z-10 pointer-events-none" // Add your animation class here
+        className="absolute z-10 pointer-events-none object-cover"
       />
       
-      {/* Background Handshake Image - Absolute positioned to the right */}
+      {/* Background Handshake Image */}
       <div 
         className="absolute top-0 right-0 w-full md:w-1/2 h-full opacity-30 pointer-events-none mix-blend-luminosity bg-cover bg-center"
         style={{ 
           backgroundImage: `url('https://images.unsplash.com/photo-1521791136064-7986c2923216?auto=format&fit=crop&q=80&w=1000')`,
-          maskImage: 'linear-gradient(to left, black, transparent)' // Fades image into the solid red
+          maskImage: 'linear-gradient(to left, black, transparent)',
+          WebkitMaskImage: 'linear-gradient(to left, black, transparent)'
         }}
       />
 
-      <div className="max-w-screen mx-auto relative z-10">
-        <div className="flex flex-col gap-4 max-w-4xl">
+      <div className="w-full relative z-10">
+        <div className="flex flex-col gap-4 max-w-4xl items-start">
           
           {/* Top Label */}
           <div className="flex items-center gap-3">
@@ -32,13 +32,32 @@ const ContactCTA = () => {
           </div>
 
           {/* Main Content */}
-          <h2 className="text-3xl md:text-7xl font-medium text-white leading-[1.2] tracking-tight">
+          <h2 className="text-3xl md:text-7xl font-medium text-white leading-[1.3] tracking-tight">
             Ready to start your next project or still exploring ideas?{' '}
-            <span className="relative inline-block cursor-pointer group">
-              <span className="font-light italic border-b border-white/40 pb-1 hover:border-white transition-colors">
-                Let's connect. ↗
-              </span>
-            </span>
+            
+            {/* INLINE BUTTON REPLACEMENT */}
+            <button className="relative inline-flex items-center justify-center px-6 py-2 ml-0 overflow-hidden transition-all bg-transparent rounded-full group align-middle duration-500 cursor-pointer">
+  <span className="flex items-center gap-3 text-xl md:text-7xl font-thin italic border-b border-white/70 hover:border-transparent text-white group-hover:text-[#c42a27] transition-colors duration-500">
+    Let's connect
+    {/* REPLACED SEARCH WITH ARROW */}
+    <svg
+      viewBox="0 0 16 19"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      className="w-6 h-6 md:w-12 md:h-12 rotate-45 group-hover:rotate-90 transition-all duration-500 ease-out"
+    >
+      <g stroke="currentColor" fill="none" strokeWidth="0">
+        <path
+          d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+          fill="currentColor"
+        />
+      </g>
+    </svg>
+  </span>
+  
+  {/* The "fill" animation background */}
+  <span className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10" />
+</button>
           </h2>
           
         </div>
