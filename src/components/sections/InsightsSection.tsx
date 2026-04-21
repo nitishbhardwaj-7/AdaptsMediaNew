@@ -66,7 +66,7 @@ const InsightsSection = () => {
               </span>
               <div className="w-12 h-[1px] bg-[#f5a623]" />
             </div>
-            <h2 className="text-3xl md:text-5xl min-[1400px]:text-7xl font-medium leading-[1.1] tracking-tight max-w-[15rem]">
+            <h2 className="text-3xl md:text-5xl min-[1400px]:text-7xl font-medium leading-[1.1] tracking-tight max-w-[15rem] md:max-w-full lg:max-w-full">
               Ideas, Trends & Industry Insights
             </h2>
           </div>

@@ -1,9 +1,10 @@
 import StatsCard from '../cards/StatCard';
 import ArrowButton from '../buttons/ArrowButton';
+import YellowButton from '../buttons/YellowButton';
 
 const OrangeSection = () => {
   return (
-    <section className="relative w-full overflow-x-hidden flex items-center justify-center bg-[#c42a27] text-white py-20 sm:px-2 md:px-10 lg:px-30">
+    <section className="relative w-full min-h-screen overflow-x-hidden flex items-center justify-center bg-[#c42a27] text-white py-20 sm:px-2 md:px-10 lg:px-30">
       
       {/* LAYER 0: The Background Image */}
       <img 
@@ -41,9 +42,7 @@ const OrangeSection = () => {
 
               <div className="flex flex-wrap justify-start gap-3 sm:gap-6 items-center">
                 <ArrowButton width='md' title="Read More"/>
-                <button className="flex items-center gap-[7px] border-none bg-[#fac02d] text-[#c42a27] font-bold rounded-full px-5 sm:px-8 py-2.5 sm:py-3 text-[clamp(0.85rem,1.2vw,1.125rem)] cursor-pointer tracking-[0.02em] font-['DM_Sans'] transition-transform hover:scale-105 whitespace-nowrap">
-                  Start a Project ↗
-                </button>
+                <YellowButton title='Start Project' variant='red'/>
               </div>
             </div>
           </div>
