@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ContactCTA = () => {
   return (
-    <section className="relative group overflow-hidden py-20 px-10 w-full flex flex-col items-start bg-[#c42a27]">
+    <section className="relative group overflow-hidden py-20 px-10 w-full flex flex-col items-center justify-center bg-[#c42a27]">
       <Image
         src="/images/ConnectBg.png" 
         fill
@@ -20,7 +20,7 @@ const ContactCTA = () => {
         }}
       />
 
-      <div className="relative z-10 group max-w-[1450px] w-full mx-auto items-start justify-start">
+      <div className="relative z-10 group max-w-[1450px] w-full px-20 items-start justify-start">
         <div className="flex flex-col gap-4 max-w-4xl">
           
           {/* Top Label */}

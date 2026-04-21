@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     // Added px-4 to ensure it never touches the screen edges even when zoomed
-    <header className="fixed top-0 left-0 w-full z-[1000] py-5 px-4 md:px-8 pointer-events-none">
+    <header className="fixed top-0 left-0 w-full z-[1000] py-5 px-4 md:px-16 pointer-events-none">
       <nav 
         aria-label="Main Navigation"
         // Added pointer-events-auto so the buttons actually work

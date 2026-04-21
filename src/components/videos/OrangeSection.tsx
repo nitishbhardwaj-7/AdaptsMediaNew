@@ -14,7 +14,7 @@ const OrangeSection = () => {
       />
 
       {/* LAYER 20: The Content Layer */}
-      <div className="relative z-20 max-w-[1450px] mx-20">
+      <div className="relative z-20 max-w-[1450px] px-20">
 
         <h1 className="text-[clamp(1.6rem,4.5vw,4.5rem)] font-extralight mb-8 md:mb-12 tracking-wider leading-tight">
               A New-Age Agency <br /> Built for Today's Brands

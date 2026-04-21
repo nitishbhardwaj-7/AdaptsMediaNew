@@ -7,8 +7,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1e1e1e] text-white pt-16 pb-8 py-20 px-10 font-sans">
-      <div className="max-w-[1450px] mx-auto">
+    <footer className="bg-[#1e1e1e] text-white flex flex-col items-center justify-center pt-16 pb-8 py-20 px-10 font-sans">
+      <div className="max-w-[1450px] px-20">
         
         {/* --- TOP ROW: Logo & Socials --- */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
