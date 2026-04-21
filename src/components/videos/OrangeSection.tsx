@@ -4,7 +4,7 @@ import YellowButton from '../buttons/YellowButton';
 
 const OrangeSection = () => {
   return (
-    <section className="relative w-full min-h-screen overflow-x-hidden flex items-center justify-center bg-[#c42a27] text-white py-20 px-10">
+    <section className="relative w-full min-h-screen overflow-x-hidden flex items-center justify-center bg-[#c42a27] text-white py-20">
       
       {/* LAYER 0: The Background Image */}
       <img 
@@ -12,16 +12,19 @@ const OrangeSection = () => {
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
-4
+
       {/* LAYER 20: The Content Layer */}
-      <div className="relative z-20 max-w-[1500px] mx-auto box-border">
-       <div className="flex flex-col min-[1200px]:flex-row justify-start gap-10">
+      <div className="relative z-20 max-w-[1450px] mx-20">
+
+        <h1 className="text-[clamp(1.6rem,4.5vw,4.5rem)] font-extralight mb-8 md:mb-12 tracking-wider leading-tight">
+              A New-Age Agency <br /> Built for Today's Brands
+            </h1>
+       <div className="flex flex-col min-[1200px]:flex-row justify-between gap-10">
+
+          
           
           {/* LEFT COLUMN */}
           <div className="flex flex-col w-full">
-            <h1 className="text-[clamp(1.6rem,4.5vw,4.5rem)] font-extralight mb-8 md:mb-12 tracking-wider leading-tight">
-              A New-Age Agency <br /> Built for Today's Brands
-            </h1>
             
             <div className="w-full">
               <h2 className="text-[clamp(1rem,2vw,1.875rem)] mb-6 md:mb-8 text-gray-200 font-thin">
@@ -48,7 +51,7 @@ const OrangeSection = () => {
           </div>
 
          
-         <div className="hidden md:flex gap-6 xl:gap-10 mt-6 min-[1300px]:pt-55 w-auto lg:w-auto lg:flex-shrink-0 lg:justify-start">
+         <div className="hidden md:flex gap-6 xl:gap-10 mt-6 w-auto lg:w-auto lg:flex-shrink lg:justify-start">
             
           
             <div className="flex flex-col gap-3 sm:gap-6 lg:flex-none">

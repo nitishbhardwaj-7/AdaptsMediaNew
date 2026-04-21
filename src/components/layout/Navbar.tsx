@@ -17,23 +17,23 @@ const NavLogo = () => (
 );
 
 const Navbar = () => {
-  
   const menuBarClass = "block w-[22px] h-[2px] bg-white rounded-[2px]";
 
   return (
-    <header className="fixed top-0 left-0 w-full z-1000 pointer-events-none py-5">
+    // Added px-4 to ensure it never touches the screen edges even when zoomed
+    <header className="fixed top-0 left-0 w-full z-[1000] py-5 px-4 md:px-8 pointer-events-none">
       <nav 
         aria-label="Main Navigation"
-        className="max-w-[1600px] w-full mx-auto top-0 left-0 z-1000 flex items-center justify-between bg-transparent box-border"
+        // Added pointer-events-auto so the buttons actually work
+        // mx-auto handles the centering within the 100% width header
+        className="max-w-[1450px] w-full mx-auto flex items-center justify-between bg-transparent pointer-events-auto"
       >
        
         <Link href="/" aria-label="Home" className="flex no-underline">
           <NavLogo />
         </Link>
 
-    
         <div className="flex items-center gap-4 md:gap-[28px]">
-          
           <button 
             type="button"
             className="flex items-center gap-2 bg-[#3b6ef5] text-white border-none rounded-full 
@@ -41,8 +41,7 @@ const Navbar = () => {
                        text-[16px] md:text-[20px] font-medium tracking-[0.01em] 
                        cursor-pointer transition-transform duration-200 ease-in-out hover:scale-105"
           >
-            <span className="hidden sm:inline">Start a Project</span>
-            <span className="sm:hidden">Start a Project</span>
+            <span>Start a Project</span>
             <Image
               alt="" 
               src="/images/clock.png"
@@ -51,9 +50,7 @@ const Navbar = () => {
               className="w-4 h-4 md:w-5 md:h-5"
             />
           </button>
-          
 
-       
           <button 
             type="button"
             aria-label="Open Menu"

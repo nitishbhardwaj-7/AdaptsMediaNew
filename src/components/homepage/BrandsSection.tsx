@@ -20,7 +20,7 @@ const BrandsSection = () => {
     <section className="bg-white py-20 px-10 font-sans w-full flex flex-col items-center">
       
 
-      <div className="max-w-[1500px] mx-auto w-full">
+      <div className="max-w-[1450px] mx-auto w-full">
         
         <div className="flex items-center gap-3 mb-4">
           <span className="text-[10px] font-bold tracking-[0.15em] text-[#003B65] uppercase">

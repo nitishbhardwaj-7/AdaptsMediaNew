@@ -91,9 +91,9 @@ const ServicesSection = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="bg-[#064ED3] bg-gradient-to-br from-[#0052FF] to-[#0039CC] text-white py-20 px-10 font-sans overflow-hidden"
+      className="bg-[#064ED3] bg-gradient-to-br from-[#0052FF] to-[#0039CC] text-white py-20 font-sans overflow-hidden"
     >
-      <div className="max-w-[1500px] mx-auto">
+      <div className="max-w-[1450px] mx-20">
         {/* Header Section */}
         <motion.div className="mb-20" variants={fadeInUp}>
           <div className="flex items-center gap-4 mb-6">

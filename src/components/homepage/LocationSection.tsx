@@ -39,7 +39,7 @@ const LocationSection = () => {
               fill
               className="absolute z-0 pointer-events-none" // Add your animation class here
             />
-      <div className="max-w-[1500px] mx-auto">
+      <div className="max-w-[1450px] mx-auto">
         
         {/* Main Content Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12">

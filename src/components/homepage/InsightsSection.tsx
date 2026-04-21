@@ -55,7 +55,7 @@ const InsightsSection = () => {
       {/* Removed 'mx-auto' and 'max-w-screen' to pin content to the left.
         Changed to w-full to allow scroll to span the width.
       */}
-      <div className="relative z-20 max-w-[1500px] mx-auto">
+      <div className="relative z-20 max-w-[1450px] mx-auto">
         
         {/* Header Section: flex-col below 1400px to keep button left-aligned */}
         <div className="flex flex-col min-[1400px]:flex-row min-[1400px]:items-end justify-between gap-8 mb-16">
