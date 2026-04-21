@@ -21,12 +21,10 @@ const Navbar = () => {
   const menuBarClass = "block w-[22px] h-[2px] bg-white rounded-[2px]";
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[1000] pointer-events-none">
+    <header className="fixed top-0 left-0 w-full z-1000 pointer-events-none py-5">
       <nav 
         aria-label="Main Navigation"
-        className="max-w-[1700px] w-full mx-auto top-0 left-0 z-[1000] flex items-center justify-between bg-transparent box-border
-                   px-5 py-[12px] md:py-[14px]
-                   [transform:translate3d(0,0,0)] [will-change:transform]"
+        className="max-w-[1600px] w-full mx-auto top-0 left-0 z-1000 flex items-center justify-between bg-transparent box-border"
       >
        
         <Link href="/" aria-label="Home" className="flex no-underline">

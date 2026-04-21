@@ -4,23 +4,23 @@ import Image from 'next/image';
 
 const brands = [
   { name: 'OSN', logo: '/images/osn.svg' },
-  { name: 'Daikin', logo: '/images/daikin.svg' },
+  { name: 'Daikin', logo: '/images/DAIKIN_logo.svg.png' },
   { name: 'Braun', logo: '/images/braun.svg' },
-  { name: 'Toshiba', logo: '/images/toshiba.svg' },
+  { name: 'Toshiba', logo: '/images/960px-TOSHIBA_Logo.png' },
   { name: 'Khaleej Times', logo: '/images/khaleej.svg' },
   { name: 'Redington', logo: '/images/redington.svg' },
   { name: 'Godiva', logo: '/images/godiva.svg' },
-  { name: 'NBK', logo: '/images/nbk.png' },
-  { name: 'Godiva', logo: '/images/godiva.svg' },
-  { name: 'NBK', logo: '/images/nbk.png' },
+  { name: 'Midea', logo: '/images/Midea.svg.png' },
+  { name: 'NBK', logo: '/images/NBK.svg.png' },
+  { name: 'Hasbro', logo: '/images/hasbro-new.png' },
 ];
 
 const BrandsSection = () => {
   return (
-    <section className="bg-white py-20 px-10 md:px-10 lg:px-30 font-sans w-full flex flex-col items-center">
+    <section className="bg-white py-20 px-10 font-sans w-full flex flex-col items-center">
       
 
-      <div className="max-w-[1700px] mx-auto w-full sm:px-6 md:px-10 xl:px-16">
+      <div className="max-w-[1500px] mx-auto w-full">
         
         <div className="flex items-center gap-3 mb-4">
           <span className="text-[10px] font-bold tracking-[0.15em] text-[#003B65] uppercase">

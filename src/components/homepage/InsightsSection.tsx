@@ -40,7 +40,7 @@ const insights = [
 
 const InsightsSection = () => {
   return (
-    <section className="relative bg-black text-white py-20 sm:px-2 md:px-10 lg:px-30 overflow-hidden font-sans flex flex-col items-start">
+    <section className="relative bg-black text-white py-20 px-10 overflow-hidden font-sans flex flex-col items-start">
       {/* Background Radial Glows */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-yellow-600/20 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-red-900/30 blur-[100px] rounded-full translate-x-1/4 -translate-y-1/4 pointer-events-none" />
@@ -55,7 +55,7 @@ const InsightsSection = () => {
       {/* Removed 'mx-auto' and 'max-w-screen' to pin content to the left.
         Changed to w-full to allow scroll to span the width.
       */}
-      <div className="relative z-20 max-w-[1700px] mx-auto px-10 md:px-10 xl:px-16">
+      <div className="relative z-20 max-w-[1500px] mx-auto">
         
         {/* Header Section: flex-col below 1400px to keep button left-aligned */}
         <div className="flex flex-col min-[1400px]:flex-row min-[1400px]:items-end justify-between gap-8 mb-16">

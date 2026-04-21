@@ -100,12 +100,17 @@ export default function PortfolioShowcase() {
                 <div className="absolute bottom-0 left-6 md:left-10 xl:left-16 right-6 md:right-10 xl:right-16 pb-16 md:pb-[60px] z-[4] flex flex-col gap-6 md:gap-4 pointer-events-auto">
                   
                   {/* Brand Branding */}
-                  <div className="flex flex-col items-center md:items-start gap-[14px] w-full md:w-fit"> 
-                    <FlowerLogo />
-                    <span className="font-['DM_Sans'] text-[20px] md:text-[26px] font-normal tracking-[0.22em] text-white/90 uppercase leading-none">
-                      {p.brand}
-                    </span>
-                  </div>
+                  <div className="flex flex-col items-start w-full md:pl-21"> 
+  <div className="flex flex-col gap-2 items-center md:items-start w-fit">
+    <div className="w-full flex justify-center md:justify-center">
+      <FlowerLogo />
+    </div>
+
+    <span className="font-['DM_Sans'] text-[20px] md:text-[26px] font-normal tracking-[0.22em] text-white/90 uppercase leading-none">
+      {p.brand}
+    </span>
+  </div>
+</div>
 
                   {/* Footer Row */}
                   <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">

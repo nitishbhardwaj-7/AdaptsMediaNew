@@ -4,7 +4,7 @@ import YellowButton from '../buttons/YellowButton';
 
 const OrangeSection = () => {
   return (
-    <section className="relative w-full min-h-screen overflow-x-hidden flex items-center justify-center bg-[#c42a27] text-white py-20 sm:px-2 md:px-10 lg:px-30">
+    <section className="relative w-full min-h-screen overflow-x-hidden flex items-center justify-center bg-[#c42a27] text-white py-20 px-10">
       
       {/* LAYER 0: The Background Image */}
       <img 
@@ -14,16 +14,16 @@ const OrangeSection = () => {
       />
 4
       {/* LAYER 20: The Content Layer */}
-      <div className="relative z-20 max-w-[1700px] mx-auto box-border px-10 sm:px-6 md:px-10 xl:px-16">
-       <div className="flex flex-col min-[1200px]:flex-row justify-start items-center gap-10 xl:gap-20">
+      <div className="relative z-20 max-w-[1500px] mx-auto box-border">
+       <div className="flex flex-col min-[1200px]:flex-row justify-start gap-10">
           
           {/* LEFT COLUMN */}
-          <div className="flex flex-col w-full lg:flex-[3]">
+          <div className="flex flex-col w-full">
             <h1 className="text-[clamp(1.6rem,4.5vw,4.5rem)] font-extralight mb-8 md:mb-12 tracking-wider leading-tight">
               A New-Age Agency <br /> Built for Today's Brands
             </h1>
             
-            <div className="w-full text-justify">
+            <div className="w-full">
               <h2 className="text-[clamp(1rem,2vw,1.875rem)] mb-6 md:mb-8 text-gray-200 font-thin">
                 We combine <strong>strategy</strong>, <strong>creativity</strong> and <strong>technology</strong> to define marketing that performs not just looks good.
               </h2>
@@ -42,16 +42,16 @@ const OrangeSection = () => {
 
               <div className="flex flex-wrap justify-start gap-3 sm:gap-6 items-center">
                 <ArrowButton width='md' title="Read More"/>
-                <YellowButton title='Start Project' variant='red'/>
+                <YellowButton title='Start a Project' variant='red'/>
               </div>
             </div>
           </div>
 
          
-         <div className="flex gap-3 sm:gap-6 xl:gap-10 mt-6 min-[1300px]:mt-50 w-full lg:w-auto lg:flex-shrink-0 justify-center lg:justify-start">
+         <div className="hidden md:flex gap-6 xl:gap-10 mt-6 min-[1300px]:pt-55 w-auto lg:w-auto lg:flex-shrink-0 lg:justify-start">
             
           
-            <div className="flex flex-col gap-3 sm:gap-6 flex-1 lg:flex-none">
+            <div className="flex flex-col gap-3 sm:gap-6 lg:flex-none">
               <StatsCard 
                 value="100+" 
                 title={`Brands Scaled\n Across Industries`}
