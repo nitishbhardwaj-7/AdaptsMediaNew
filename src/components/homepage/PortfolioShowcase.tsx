@@ -85,7 +85,7 @@ export default function PortfolioShowcase() {
 
               {/* ── ALIGNMENT CONTAINER (The 1700px Fix) ── */}
               {/* Added w-full max-w-[1700px] mx-auto and relative positioning */}
-              <div className="relative h-full w-full max-w-[1450px] mx-auto px-6 md:px-10 xl:px-16 pointer-events-none">
+              <div className="relative h-full w-full max-w-[1600px] mx-auto px-6 md:px-10 xl:px-16 pointer-events-none">
                 
                 {/* Top bar: Now aligned to the 1700px container's left edge */}
                 <div className="absolute top-[24px] md:top-[48px] left-6 md:left-10 xl:left-16 right-6 md:right-10 xl:right-16 flex items-center gap-[14px] z-[4] pointer-events-auto">

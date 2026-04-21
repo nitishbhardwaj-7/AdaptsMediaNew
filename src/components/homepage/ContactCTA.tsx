@@ -20,7 +20,7 @@ const ContactCTA = () => {
         }}
       />
 
-      <div className="relative z-10 group max-w-[1450px] w-full px-20 items-start justify-start">
+      <div className="relative z-10 group max-w-[1600px] w-full px-8 md:px-20 items-start justify-start">
         <div className="flex flex-col gap-4 max-w-4xl">
           
           {/* Top Label */}

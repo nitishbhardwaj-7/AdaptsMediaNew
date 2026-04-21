@@ -100,7 +100,7 @@ const pageData = {
 
 export default function RecognizedSection() {
   return (
-    <section className="relative text-white py-20 px-10 w-full flex flex-col items-center justify-center">
+    <section className="relative text-white py-20 px-10 w-full flex flex-col items-start justify-start md:items-center md:justify-center">
       <Image
         src="/images/Awards_Bg.png"
         alt="Background"
@@ -110,7 +110,7 @@ export default function RecognizedSection() {
         sizes="100vw"
       />
       
-      <div className="relative z-10 max-w-[1450px] px-20 w-full">
+      <div className="relative z-10 max-w-[1600px] px-8 md:px-20 w-full">
         {/* Header Section */}
         <div className="flex flex-col min-[1300px]:flex-row min-[1300px]:items-end min-[1300px]:justify-between gap-12 mb-20">
           <div className="flex flex-col items-start">

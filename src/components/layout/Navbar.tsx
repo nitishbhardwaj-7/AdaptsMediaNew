@@ -26,7 +26,7 @@ const Navbar = () => {
         aria-label="Main Navigation"
         // Added pointer-events-auto so the buttons actually work
         // mx-auto handles the centering within the 100% width header
-        className="max-w-[1450px] w-full mx-auto flex items-center justify-between bg-transparent pointer-events-auto"
+        className="max-w-[1600px] w-full mx-auto flex items-center justify-between bg-transparent pointer-events-auto"
       >
        
         <Link href="/" aria-label="Home" className="flex no-underline">

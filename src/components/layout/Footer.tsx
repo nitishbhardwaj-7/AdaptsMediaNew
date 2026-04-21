@@ -7,8 +7,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1e1e1e] text-white flex flex-col items-center justify-center pt-16 pb-8 py-20 px-10 font-sans">
-      <div className="max-w-[1450px] px-20">
+    <footer className="bg-[#1e1e1e] text-white flex flex-col items-start justify-start md:items-center md:justify-center pt-16 pb-8 py-20 px-10 font-sans">
+      <div className="max-w-[1600px] px-8 md:px-20">
         
         {/* --- TOP ROW: Logo & Socials --- */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
@@ -127,7 +127,7 @@ const Footer = () => {
 // --- Helper Components for Styling ---
 
 const FooterHeading = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
-  <h4 className={`text-[10px] font-normal text-white ${className}`}>
+  <h4 className={`text-[14px] font-bold text-white ${className}`}>
     {children}
   </h4>
 );
