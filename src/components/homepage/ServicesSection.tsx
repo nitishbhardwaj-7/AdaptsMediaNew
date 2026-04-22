@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion"; // Added Variants import
 import ArrowButton from "../buttons/ArrowButton";
 import YellowButton from "../buttons/YellowButton";
 import Image from "next/image";
+import ServiceList from "../layout/ServicesList";
 
 const services = [
   {
@@ -143,24 +144,7 @@ const ServicesSection = () => {
               <h3 className="text-2xl md:text-5xl font-light mb-8 leading-snug min-h-[4rem] w-87">
                 {service.title}
               </h3>
-
-              {/* List Items */}
-              <div className="flex flex-col">
-                {service.items.map((item, itemIndex) => (
-                  <motion.div
-                    key={itemIndex}
-                    initial="initial"
-                    whileHover="hover"
-                    className="flex items-center justify-between py-3 px-2 border-t border-white/60 group cursor-pointer hover:bg-white/5 transition-colors"
-                  >
-                    <span className="text-sm md:text-lg font-extralight tracking-wide opacity-90">
-                      {item}
-                    </span>
-                    <ArrowIcon />
-                  </motion.div>
-                ))}
-                <div className="border-t border-white/60 mb-20" />
-              </div>
+             <ServiceList items={service.items} />
             </motion.div>
           ))}
         </motion.div>

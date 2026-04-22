@@ -1,6 +1,9 @@
+import ConnectedThinkingServices from "@/src/components/servicespage/ConnectedThinking"
+import ServicesHero from "@/src/components/servicespage/ServicesHero"
+
 const page = () => {
   return (
-    <div>services</div>
+    <div><ServicesHero/><ConnectedThinkingServices/></div>
   )
 }
 

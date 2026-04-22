@@ -52,7 +52,7 @@ const OrangeSection = () => {
           </div>
 
          
-         <div className="hidden md:flex gap-6 xl:gap-10 mt-6 w-auto lg:w-auto lg:flex-shrink lg:justify-start">
+         <div className="flex gap-6 xl:gap-10 mt-6 w-auto lg:w-auto lg:flex-shrink lg:justify-start">
             
           
             <div className="flex flex-col gap-3 sm:gap-6 lg:flex-none">

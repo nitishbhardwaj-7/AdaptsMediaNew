@@ -1,44 +1,53 @@
 import Image from "next/image";
 import ArrowButton from "../buttons/ArrowButton";
 import Tailwind3DCard from "../cards/Tailwind3DCard";
+import { getWordPressPosts } from "@/src/lib/getPosts"; // path to your fetcher
+import Link from "next/link";
 
-const insights = [
-  {
-    title: "Social Media Marketing: Facts You Need to Know This Year",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    title: "Types of Web Development That Businesses Must Know",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    title: "Top AI Tools Digital Marketers Should Be Using Today!",
-    image: "https://images.unsplash.com/photo-1698628472751-b65c74f247a9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    title: "4 Simple Steps to Optimize Your Dubai Business for Web",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    title: "Social Media Marketing: Facts You Need to Know This Year",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    title: "Types of Web Development That Businesses Must Know",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    title: "Top AI Tools Digital Marketers Should Be Using Today!",
-    image: "https://images.unsplash.com/photo-1698628472751-b65c74f247a9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    title: "4 Simple Steps to Optimize Your Dubai Business for Web",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
-  }
-  // Adding more cards here will now automatically enable horizontal scrolling
-];
+// const insights = [
+//   {
+//     title: "Social Media Marketing: Facts You Need to Know This Year",
+//     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
+//   },
+//   {
+//     title: "Types of Web Development That Businesses Must Know",
+//     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
+//   },
+//   {
+//     title: "Top AI Tools Digital Marketers Should Be Using Today!",
+//     image: "https://images.unsplash.com/photo-1698628472751-b65c74f247a9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//   },
+//   {
+//     title: "4 Simple Steps to Optimize Your Dubai Business for Web",
+//     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
+//   },
+//   {
+//     title: "Social Media Marketing: Facts You Need to Know This Year",
+//     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
+//   },
+//   {
+//     title: "Types of Web Development That Businesses Must Know",
+//     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
+//   },
+//   {
+//     title: "Top AI Tools Digital Marketers Should Be Using Today!",
+//     image: "https://images.unsplash.com/photo-1698628472751-b65c74f247a9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//   },
+//   {
+//     title: "4 Simple Steps to Optimize Your Dubai Business for Web",
+//     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
+//   }
+//   // Adding more cards here will now automatically enable horizontal scrolling
+// ];
+interface Insight {
+  title: string;
+  image: string;
+  slug?: string;
+}
 
-const InsightsSection = () => {
+const InsightsSection = async () => {
+  // Fetching real data from your WordPress backend via the helper function
+  const insights = await getWordPressPosts(10);
   return (
     <section className="relative bg-black text-white py-20 overflow-hidden font-sans flex flex-col items-start justify-start md:items-center md:justify-center">
       {/* Background Radial Glows */}
@@ -72,8 +81,10 @@ const InsightsSection = () => {
           </div>
 
           <div className="flex justify-start">
-            <ArrowButton title="Read More"/>
-          </div>
+  <Link href="/blogs">
+    <ArrowButton title="Read More"/>
+  </Link>
+</div>
         </div>
 
         {/* --- HORIZONTAL SCROLLING GRID --- */}
@@ -81,13 +92,18 @@ const InsightsSection = () => {
             goes edge-to-edge but content aligns with the text.
         */}
         <div className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-hide px-8 min-[1400px]:mx-0 min-[1400px]:px-0">
-          {insights.map((item, index) => (
-            <div key={index} className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-start">
+          {insights.map((item: Insight, index: number) => (
+            <Link 
+              key={index} 
+              href={`/blogs/${item.slug}`} 
+              className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-start"
+            >
+              {/* The card is now a child of the Link */}
               <Tailwind3DCard 
                 title={item.title} 
                 image={item.image} 
               />
-            </div>
+            </Link>
           ))}
         </div>
         {/* ---------------------------------- */}
