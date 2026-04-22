@@ -32,7 +32,7 @@ const locations = [
 
 const LocationSection = () => {
   return (
-    <section className="bg-[#022C56] relative text-white flex flex-col items-start justify-start md:items-center md:justify-center py-20 px-10 font-sans overflow-hidden">
+    <section className="bg-[#022C56] relative text-white flex flex-col items-start justify-start md:items-center md:justify-center py-20 font-sans overflow-hidden">
       <Image
               src="/images/LocationMask.png" 
               alt="Decorative Element"
@@ -115,7 +115,7 @@ const LocationSection = () => {
                     {loc.address}
                   </p>
                 </div>
-                <div className="text-[13px] h-16 flex flex-col justify-center opacity-60 mt-2 border-t border-b border-white/80 transition-colors whitespace-pre-line font-light">
+                <div className="text-[13px] py-4 flex flex-col justify-center opacity-60 mt-2 border-t border-b border-white/80 transition-colors whitespace-pre-line font-light">
                   {loc.contact}
                 </div>
               </div>

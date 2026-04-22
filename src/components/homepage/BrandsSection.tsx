@@ -52,7 +52,6 @@ const BrandsSection = () => {
                   fill
                   className="object-contain grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                  priority={index < 5}
                 />
               </div>
             </div>

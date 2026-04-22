@@ -39,7 +39,7 @@ export default function RootLayout({
         {/* Everything inside SmoothScroll will have that buttery momentum effect */}
         <SmoothScroll>
           <Navbar />
-          <main style={{ paddingTop: '70px' }}> 
+          <main style={{ paddingTop: '0px' }}> 
             {children}
           </main>
         </SmoothScroll>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ContactCTA = () => {
   return (
-    <section className="relative group overflow-hidden py-20 px-10 w-full flex flex-col items-center justify-center bg-[#c42a27]">
+    <section className="relative group overflow-hidden py-20 w-full flex flex-col items-center justify-center bg-[#c42a27]">
       <Image
         src="/images/ConnectBg.png" 
         fill
