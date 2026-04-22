@@ -36,8 +36,8 @@ const ContactCTA = () => {
             Ready to start your next project or still exploring ideas?{' '}
             
             {/* INLINE BUTTON REPLACEMENT */}
-            <button className="relative inline-flex items-center justify-center px-6 py-2 skew-x-[-12deg] overflow-hidden transition-all bg-transparent group align-middle duration-500 cursor-pointer">
-  <span className="flex items-center gap-3 text-xl md:text-7xl font-thin italic border-b skew-x-[12deg] border-white/70 text-white group-hover:text-[#c42a27] transition-colors duration-500">
+            <button className="relative inline-flex items-center justify-center md:px-6 lg:px-6 py-2 md:skew-x-[-12deg] overflow-hidden transition-all bg-transparent group align-middle duration-500 cursor-pointer">
+  <span className="flex items-center gap-3 text-3xl md:text-7xl font-thin italic border-b md:skew-x-[12deg] border-white/70 text-white group-hover:text-[#c42a27] transition-colors duration-500">
     Let's connect
     {/* REPLACED SEARCH WITH ARROW */}
     <svg

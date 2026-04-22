@@ -40,7 +40,7 @@ const insights = [
 
 const InsightsSection = () => {
   return (
-    <section className="relative bg-black text-white py-20 px-10 overflow-hidden font-sans flex flex-col items-start justify-start md:items-center md:justify-center">
+    <section className="relative bg-black text-white py-20 overflow-hidden font-sans flex flex-col items-start justify-start md:items-center md:justify-center">
       {/* Background Radial Glows */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-yellow-600/20 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-red-900/30 blur-[100px] rounded-full translate-x-1/4 -translate-y-1/4 pointer-events-none" />
@@ -59,15 +59,15 @@ const InsightsSection = () => {
         
         {/* Header Section: flex-col below 1400px to keep button left-aligned */}
         <div className="flex flex-col min-[1400px]:flex-row min-[1400px]:items-end justify-between gap-8 mb-16">
-          <div className="flex flex-col gap-4 items-start">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col gap-4">
+            <div className="flex gap-3">
               <span className="text-[10px] font-bold tracking-[0.2em] text-[#f5a623] uppercase">
                 Insights
               </span>
               <div className="w-12 h-[1px] bg-[#f5a623]" />
             </div>
-            <h2 className="text-3xl md:text-5xl min-[1400px]:text-7xl font-medium leading-[1.1] tracking-tight max-w-[15rem] md:max-w-full lg:max-w-full">
-              Ideas, Trends & Industry Insights
+            <h2 className="text-3xl md:text-6xl min-[1400px]:text-7xl tracking-wide font-medium leading-[1.1] tracking-tight md:max-w-full lg:max-w-full">
+              Ideas, Trends & <br/> Industry Insights
             </h2>
           </div>
 
@@ -80,7 +80,7 @@ const InsightsSection = () => {
         {/* Added '-mx-8' and 'px-8' on mobile/tablet range so the scroll 
             goes edge-to-edge but content aligns with the text.
         */}
-        <div className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-hide -mx-8 px-8 min-[1400px]:mx-0 min-[1400px]:px-0">
+        <div className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-hide px-8 min-[1400px]:mx-0 min-[1400px]:px-0">
           {insights.map((item, index) => (
             <div key={index} className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] snap-start">
               <Tailwind3DCard 

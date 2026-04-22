@@ -100,7 +100,7 @@ const pageData = {
 
 export default function RecognizedSection() {
   return (
-    <section className="relative text-white py-20 px-10 w-full flex flex-col items-start justify-start md:items-center md:justify-center">
+    <section className="relative text-white py-20 w-full flex flex-col items-start justify-start md:items-center md:justify-center">
       <Image
         src="/images/Awards_Bg.png"
         alt="Background"
@@ -120,11 +120,10 @@ export default function RecognizedSection() {
               </span>
               <div className="w-12 h-[0.6px] bg-[#FAC02E] translate-y-[3px]" />
             </div>
-            <h2 className="text-4xl md:text-5xl min-[1300px]:text-7xl font-medium leading-[1.05] tracking-tight max-w-2xl">
-              {pageData.awards.heading}
+            <h2 className="text-4xl md:text-7xl min-[1300px]:text-7xl font-medium leading-[1.05] -tracking-wide max-w-2xl">
+              Recognized for <br/> Excellence
             </h2>
           </div>
-          
           <div className="flex justify-start">
             <ArrowButton title='Explore More'/>
           </div>
@@ -133,7 +132,7 @@ export default function RecognizedSection() {
         {/* --- AWARDS GRID FIX --- */}
         {/* Added 'content-start' and 'items-stretch' to ensure rows never collapse 
             into each other during browser zoom calculations. */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6 items-stretch content-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6 items-stretch content-start px-10 md:px-0 lg:px-0">
           {awardsData.map((award, index) => (
             <div key={index} className="flex h-full min-h-[200px]">
               <AwardCard 
@@ -152,7 +151,7 @@ export default function RecognizedSection() {
 
           {/* Changed gap to gap-y-12 for better vertical spacing when 
               wrapped during high zoom levels. */}
-          <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-12">
+          <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-6 md:gap-y-12 lg:gap-y-12">
             
             {/* Sortlist */}
             <div className="relative w-48 h-20 shrink-0">

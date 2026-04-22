@@ -45,7 +45,7 @@ const LocationSection = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12">
           
           {/* Left: Dubai Info */}
-          <div className="w-full lg:w-1/2">
+          <div className="w-full md:w-[70%]">
             <div className="flex items-center gap-3 mb-6">
               <span className="text-[10px] font-bold tracking-[0.2em] text-[#f5a623] uppercase">
                 Locations
@@ -53,8 +53,14 @@ const LocationSection = () => {
               <div className="w-12 h-[1px] bg-[#f5a623]" />
             </div>
             
-            <h2 className="text-5xl md:text-7xl font-medium mb-16 leading-tight tracking-tight">
-              Exactly Where <br /> You Need Us <span className="text-3xl align-top ml-2">↗</span>
+            <h2 className="text-5xl md:text-7xl relative font-medium mb-16 leading-tight tracking-tight">
+              Exactly Where <br /> You Need Us <Image
+              src='/images/Arrow.png'
+              alt=""
+              width={20}
+              height={20}
+              className="hidden md:block lg:block md:absolute lg:absolute right-32 top-28"/>
+              
             </h2>
 
             <div className="space-y-6">
@@ -82,7 +88,12 @@ const LocationSection = () => {
                  className="w-full  object-contain opacity-100"
                />
                {/* Location Pin */}
-               <div className="absolute top-[46%] left-[59%] w-4 h-4 bg-red-600 rounded-full border-2 border-white shadow-[0_0_10px_red]" />
+               <Image
+               src='/images/LocationPin.png'
+               alt=''
+               height='20'
+               width='30'
+               className='hidden md:block lg:block md:absolute lg:absolute top-[38%] left-[58%]'/>
             </div>
           </div>
         </div>
@@ -104,13 +115,13 @@ const LocationSection = () => {
                     {loc.address}
                   </p>
                 </div>
-                
-                {/* Footer details - Bottom aligned */}
-                <div className="text-[15px] h-14 flex flex-col justify-center opacity-60 mt-2 border-t border-b border-white/80 transition-colors whitespace-pre-line font-light leading-normal">
+                <div className="text-[13px] h-16 flex flex-col justify-center opacity-60 mt-2 border-t border-b border-white/80 transition-colors whitespace-pre-line font-light">
                   {loc.contact}
                 </div>
               </div>
+              
             ))}
+            
           </div>
         </div>
 

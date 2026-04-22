@@ -3,6 +3,7 @@ import React from "react";
 import { motion, Variants } from "framer-motion"; // Added Variants import
 import ArrowButton from "../buttons/ArrowButton";
 import YellowButton from "../buttons/YellowButton";
+import Image from "next/image";
 
 const services = [
   {
@@ -91,9 +92,15 @@ const ServicesSection = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="bg-[#064ED3] bg-gradient-to-br from-[#0052FF] to-[#0039CC] text-white flex flex-col w-full items-start justify-start md:items-center md:justify-center py-20 font-sans overflow-hidden"
+      className="bg-[#064ED3] bg-gradient-to-br from-[#0052FF] relative to-[#0039CC] text-white flex flex-col w-full items-start justify-start md:items-center md:justify-center py-20 font-sans overflow-hidden"
     >
-      <div className="max-w-[1600px] w-full px-8 md:px-20">
+      <Image
+              src="/images/Services_Bg.png" 
+              alt=""
+              fill
+              className="absolute z-10 pointer-events-none object-cover" 
+            />
+      <div className="max-w-[1600px] z-50 w-full px-8 md:px-20">
         {/* Header Section */}
         <motion.div className="mb-20" variants={fadeInUp}>
           <div className="flex gap-4 mb-6">
