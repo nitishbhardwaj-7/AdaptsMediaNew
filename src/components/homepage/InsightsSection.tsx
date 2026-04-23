@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ArrowButton from "../buttons/ArrowButton";
 import Tailwind3DCard from "../cards/Tailwind3DCard";
-import { getWordPressPosts } from "@/src/lib/getPosts"; // path to your fetcher
+import { getWordPressPosts } from "@/lib/getPosts"; // path to your fetcher
 import Link from "next/link";
 
 interface Insight {

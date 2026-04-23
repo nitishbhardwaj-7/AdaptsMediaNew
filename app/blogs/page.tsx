@@ -1,5 +1,5 @@
-import { getWordPressPosts } from "@/src/lib/getPosts";
-import Tailwind3DCard from "@/src/components/cards/Tailwind3DCard";
+import { getWordPressPosts } from "@/lib/getPosts";
+import Tailwind3DCard from "@/components/cards/Tailwind3DCard";
 
 
 

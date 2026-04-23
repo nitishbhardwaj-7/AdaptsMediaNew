@@ -1,4 +1,4 @@
-import { getSinglePost } from "@/src/lib/getPosts";
+import { getSinglePost } from "@/lib/getPosts";
 import { Metadata } from 'next';
 
 type Props = {

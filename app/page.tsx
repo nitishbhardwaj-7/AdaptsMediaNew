@@ -1,14 +1,14 @@
-import Footer from "@/src/components/layout/Footer";
-import BrandsSection from "@/src/components/HomePage/BrandsSection";
-import ContactCTA from "@/src/components/HomePage/ContactCTA";
-import InsightsSection from "@/src/components/HomePage/InsightsSection";
-import LocationSection from "@/src/components/HomePage/LocationSection";
-import PortfolioShowcase from "@/src/components/HomePage/PortfolioShowcase";
-import RecreateDesign from "@/src/components/HomePage/RecognizedSection";
-import ServicesSection from "@/src/components/HomePage/ServicesSection";
-import HeroVideo from "@/src/components/videos/HeroVideo";
-import OrangeSection from "@/src/components/videos/OrangeSection";
-import SocialBar from "@/src/components/layout/SocialBar";
+import Footer from "@/components/layout/Footer";
+import BrandsSection from "@/components/HomePage/BrandsSection";
+import ContactCTA from "@/components/HomePage/ContactCTA";
+import InsightsSection from "@/components/HomePage/InsightsSection";
+import LocationSection from "@/components/HomePage/LocationSection";
+import PortfolioShowcase from "@/components/HomePage/PortfolioShowcase";
+import RecreateDesign from "@/components/HomePage/RecognizedSection";
+import ServicesSection from "@/components/HomePage/ServicesSection";
+import HeroVideo from "@/components/videos/HeroVideo";
+import OrangeSection from "@/components/videos/OrangeSection";
+import SocialBar from "@/components/layout/SocialBar";
 import { Metadata } from "next";
 
 

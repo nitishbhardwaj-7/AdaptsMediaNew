@@ -1,10 +1,10 @@
-import BrandsSection from "@/src/components/HomePage/BrandsSection"
-import ContactCTA from "@/src/components/HomePage/ContactCTA"
-import Footer from "@/src/components/layout/Footer"
-import ConnectedThinkingServices from "@/src/components/ServicesPage/ConnectedThinking"
-import PerformSection from "@/src/components/ServicesPage/PerformSection"
-import PortfolioSection from "@/src/components/ServicesPage/PortfolioSection"
-import ServicesHero from "@/src/components/ServicesPage/ServicesHero"
+import BrandsSection from "@/components/HomePage/BrandsSection"
+import ContactCTA from "@/components/HomePage/ContactCTA"
+import Footer from "@/components/layout/Footer"
+import ConnectedThinkingServices from "@/components/ServicesPage/ConnectedThinking"
+import PerformSection from "@/components/ServicesPage/PerformSection"
+import PortfolioSection from "@/components/ServicesPage/PortfolioSection"
+import ServicesHero from "@/components/ServicesPage/ServicesHero"
 
 const page = () => {
   return (
