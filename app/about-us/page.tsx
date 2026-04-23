@@ -8,7 +8,7 @@ import BrandsSection from '@/components/homepage/BrandsSection'
 import ContactCTA from '@/components/homepage/ContactCTA'
 import RecognizedSection from '@/components/homepage/RecognizedSection'
 import Footer from '@/components/layout/Footer'
-import PerformSection from '@/components/ServicesPage/PerformSection'
+import PerformSection from '@/components/servicespage/PerformSection'
 
 const page = () => {
   return (
