@@ -4,7 +4,7 @@ import Footer from "@/src/components/layout/Footer"
 import ConnectedThinkingServices from "@/src/components/ServicesPage/ConnectedThinking"
 import PerformSection from "@/src/components/ServicesPage/PerformSection"
 import PortfolioSection from "@/src/components/ServicesPage/PortfolioSection"
-import ServicesHero from "../../src/components/ServicesPage/ServicesHero"
+import ServicesHero from "@/src/components/ServicesPage/ServicesHero"
 
 const page = () => {
   return (
