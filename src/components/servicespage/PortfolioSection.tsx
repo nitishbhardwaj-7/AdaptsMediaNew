@@ -1,18 +1,52 @@
 import Image from "next/image";
 import ArrowButton from "../buttons/ArrowButton";
 import Tailwind3DCard from "../cards/Tailwind3DCard";
-import { getWordPressPosts } from "@/src/lib/getPosts"; // path to your fetcher
 import Link from "next/link";
 
+const insights = [
+  {
+    title: "Social Media Marketing: Facts You Need to Know This Year",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "Types of Web Development That Businesses Must Know",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "Top AI Tools Digital Marketers Should Be Using Today!",
+    image: "https://images.unsplash.com/photo-1698628472751-b65c74f247a9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "4 Simple Steps to Optimize Your Dubai Business for Web",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "Social Media Marketing: Facts You Need to Know This Year",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "Types of Web Development That Businesses Must Know",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    title: "Top AI Tools Digital Marketers Should Be Using Today!",
+    image: "https://images.unsplash.com/photo-1698628472751-b65c74f247a9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "4 Simple Steps to Optimize Your Dubai Business for Web",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
+  }
+  // Adding more cards here will now automatically enable horizontal scrolling
+];
 interface Insight {
   title: string;
   image: string;
   slug?: string;
 }
 
-const InsightsSection = async () => {
+const PortfolioSection = async () => {
   // Fetching real data from your WordPress backend via the helper function
-  const insights = await getWordPressPosts(10);
+//   const insights = await getWordPressPosts(10);
   return (
     <section className="relative bg-black text-white py-20 overflow-hidden font-sans flex flex-col items-start justify-start md:items-center md:justify-center">
       {/* Background Radial Glows */}
@@ -29,25 +63,23 @@ const InsightsSection = async () => {
       {/* Removed 'mx-auto' and 'max-w-screen' to pin content to the left.
         Changed to w-full to allow scroll to span the width.
       */}
-      <div className="relative z-20 max-w-[1600px] px-8 md:px-20 w-full">
+      <div className="relative z-20 max-w-[1700px] px-8 md:px-20 w-full">
         
         {/* Header Section: flex-col below 1400px to keep button left-aligned */}
         <div className="flex flex-col min-[1400px]:flex-row min-[1400px]:items-end justify-between gap-8 mb-16">
           <div className="flex flex-col gap-4">
             <div className="flex gap-3">
               <span className="text-[10px] font-bold tracking-[0.2em] text-[#f5a623] uppercase">
-                Insights
+                Portfolio
               </span>
               <div className="w-12 h-[1px] bg-[#f5a623]" />
             </div>
-            <h2 className="text-3xl md:text-6xl min-[1400px]:text-7xl tracking-wide font-medium leading-[1.1] tracking-tight md:max-w-full lg:max-w-full">
-              Ideas, Trends & <br/> Industry Insights
-            </h2>
+            
           </div>
 
           <div className="flex justify-start">
   <Link href="/blogs">
-    <ArrowButton title="Read More"/>
+    <ArrowButton title="View Portfolio"/>
   </Link>
 </div>
         </div>
@@ -78,4 +110,4 @@ const InsightsSection = async () => {
   );
 };
 
-export default InsightsSection;
+export default PortfolioSection;

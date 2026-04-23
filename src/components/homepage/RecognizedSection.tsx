@@ -5,18 +5,6 @@ import Image from 'next/image';
 import ArrowButton from '../buttons/ArrowButton';
 import AwardCard from '../cards/AwardCard';
 
-// --- Sub-component for Service List Items ---
-const ServiceItem = ({ text }: { text: string }) => (
-  <div className="flex items-center justify-between py-4 border-t border-white/20 hover:bg-white/5 cursor-pointer group transition-colors">
-    <span className="text-sm tracking-wide text-white/90 font-light group-hover:text-white">
-      {text}
-    </span>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/70 opacity-0 group-hover:opacity-100 transition-opacity">
-      <line x1="7" y1="17" x2="17" y2="7" />
-      <polyline points="7 7 17 7 17 17" />
-    </svg>
-  </div>
-);
 
 const awardsData = [
   {

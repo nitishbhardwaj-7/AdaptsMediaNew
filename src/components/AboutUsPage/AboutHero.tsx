@@ -1,4 +1,4 @@
-const ServicesHero = () => {
+const AboutHero = () => {
   return (
     <section className="relative min-h-[80vh] w-full overflow-hidden bg-gradient-to-br from-[#4c3592] via-[#e21b22] to-[#4c3592] flex items-center justify-center px-6 py-12 text-white md:px-16 lg:px-24">
 
@@ -7,7 +7,7 @@ const ServicesHero = () => {
         {/* Left Side */}
         <div className="flex items-center">
           <h1 className="text-5xl tracking-wide md:text-7xl">
-            Services
+            About Us
           </h1>
         </div>
 
@@ -26,4 +26,4 @@ const ServicesHero = () => {
   );
 };
 
-export default ServicesHero;
+export default AboutHero;

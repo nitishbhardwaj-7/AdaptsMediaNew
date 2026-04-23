@@ -1,7 +1,10 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
-const ServiceList = ({ items }) => {
+interface ServiceListProps {
+  items: string[]; // Explicitly telling TS this is an array of strings
+}
+
+const ServiceList = ({ items }: ServiceListProps) => {
   return (
     <div className="flex flex-col">
 

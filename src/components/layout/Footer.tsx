@@ -30,7 +30,9 @@ const Footer = () => {
           
           {/* Col 1: About & Services */}
           <div>
-            <FooterHeading>About Us</FooterHeading>
+            <FooterHeading>
+    <a href="/about-us">About Us</a>
+</FooterHeading>
             <FooterHeading className="mt-10">Services</FooterHeading>
             <ul className="space-y-2 mt-4">
               <FooterLink>SEM Agency</FooterLink>
@@ -48,7 +50,7 @@ const Footer = () => {
 
           {/* Col 2: Work */}
           <div>
-            <FooterHeading>Clients & Our Work</FooterHeading>
+            <FooterHeading><a href="/services">Clients & Our Work</a></FooterHeading>
           </div>
 
           {/* Col 3: Team & Dubai Office */}

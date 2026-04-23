@@ -1,5 +1,4 @@
 "use client"
-import React from "react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import ServiceList from "../layout/ServicesList";

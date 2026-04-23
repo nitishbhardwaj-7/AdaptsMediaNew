@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/src/components/layout/Navbar";
-import SmoothScroll from "@/src/components/providers/SmoothScroll";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -80,12 +79,12 @@ export default function RootLayout({
       </head>
       <body>
         {/* Everything inside SmoothScroll will have that buttery momentum effect */}
-        <SmoothScroll>
+        {/* <SmoothScroll> */}
           <Navbar />
           <main style={{ paddingTop: '0px' }}> 
             {children}
           </main>
-        </SmoothScroll>
+        {/* </SmoothScroll> */}
         {/* Google Tag Manager - Loads only after the page is interactive */}
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

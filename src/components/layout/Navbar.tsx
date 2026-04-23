@@ -20,15 +20,14 @@ const Navbar = () => {
   const menuBarClass = "block w-[22px] h-[2px] bg-white rounded-[2px]";
 
   return (
-    // Added px-4 to ensure it never touches the screen edges even when zoomed
     <header className="fixed top-0 left-0 w-full z-[1000] py-5 px-4 md:px-16 pointer-events-none">
       <nav 
         aria-label="Main Navigation"
-        // Added pointer-events-auto so the buttons actually work
-        // mx-auto handles the centering within the 100% width header
-        className="max-w-[1600px] w-full mx-auto flex items-center justify-between bg-transparent pointer-events-auto"
+        className="max-w-[1600px] w-full mx-auto flex items-center justify-between pointer-events-auto 
+                   bg-white/10 backdrop-blur-md border border-white/20 
+                   px-6 py-3 rounded-full shadow-lg"
       >
-       
+        
         <Link href="/" aria-label="Home" className="flex no-underline">
           <NavLogo />
         </Link>

@@ -1,5 +1,4 @@
 "use client"
-import React from "react";
 import { motion, Variants } from "framer-motion"; // Added Variants import
 import ArrowButton from "../buttons/ArrowButton";
 import YellowButton from "../buttons/YellowButton";

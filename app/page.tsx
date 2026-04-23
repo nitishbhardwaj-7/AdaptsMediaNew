@@ -1,15 +1,15 @@
-import ArrowButton from "@/src/components/buttons/ArrowButton";
-import StatsCard from "@/src/components/cards/StatCard";
 import Footer from "@/src/components/layout/Footer";
-import BrandsSection from "@/src/components/homepage/BrandsSection";
-import ContactCTA from "@/src/components/homepage/ContactCTA";
-import InsightsSection from "@/src/components/homepage/InsightsSection";
-import LocationSection from "@/src/components/homepage/LocationSection";
-import PortfolioShowcase from "@/src/components/homepage/PortfolioShowcase";
-import RecreateDesign from "@/src/components/homepage/RecognizedSection";
-import ServicesSection from "@/src/components/homepage/ServicesSection";
+import BrandsSection from "@/src/components/HomePage/BrandsSection";
+import ContactCTA from "@/src/components/HomePage/ContactCTA";
+import InsightsSection from "@/src/components/HomePage/InsightsSection";
+import LocationSection from "@/src/components/HomePage/LocationSection";
+import PortfolioShowcase from "@/src/components/HomePage/PortfolioShowcase";
+import RecreateDesign from "@/src/components/HomePage/RecognizedSection";
+import ServicesSection from "@/src/components/HomePage/ServicesSection";
 import HeroVideo from "@/src/components/videos/HeroVideo";
 import OrangeSection from "@/src/components/videos/OrangeSection";
+import SocialBar from "@/src/components/layout/SocialBar";
+import { Metadata } from "next";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -62,6 +62,8 @@ export default async function Home() {
       <ContactCTA/>
 
       <LocationSection/>
+
+      <SocialBar/>
 
       <Footer/>
     </main>

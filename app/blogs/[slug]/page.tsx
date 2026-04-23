@@ -1,10 +1,13 @@
 import { getSinglePost } from "@/src/lib/getPosts";
-import Image from "next/image";
 import { Metadata } from 'next';
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 
 // This function replaces the "Create Next App" default with real blog data
-export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await getSinglePost(slug);
 
