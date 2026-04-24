@@ -34,7 +34,7 @@ const SocialContent = () => {
       />
 
       <div className="z-50 max-w-[1450px] w-full px-8 md:px-20">
-        <div className="flex flex-col md:flex-row gap-12 md:gap-42 items-start">
+        <div className="flex flex-col min-[1200px]:flex-row gap-12 md:gap-42 items-start">
           
          {/* 1. Left Side: Column Wrapper */}
 <div className="flex-shrink-0 md:sticky md:top-20">

@@ -50,7 +50,7 @@ const PublicRelations = () => {
        <div className="relative z-50 max-w-[1450px] w-full px-8 md:px-20 mx-auto">
          
          {/* Flex Wrapper: Performance Marketing on Left, Image on Right */}
-         <div className="flex flex-col md:flex-row gap-12 md:gap-36 items-start">
+         <div className="flex flex-col min-[1200px]:flex-row gap-12 md:gap-36 items-start">
            
            {/* LEFT COLUMN: Text and Grid */}
            <div className="flex-grow w-full">

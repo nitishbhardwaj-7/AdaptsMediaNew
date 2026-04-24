@@ -1,7 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavLogo = () => (
   <div className="relative w-[60px] h-[40px]">
@@ -17,23 +19,38 @@ const NavLogo = () => (
 );
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuBarClass = "block w-[22px] h-[2px] bg-white rounded-[2px]";
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Trigger the narrow version after 50px of scrolling
+      setIsScrolled(window.scrollY > 250);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-[1000] py-5 px-4 md:px-16 pointer-events-none">
-      <nav 
+    <header className="fixed top-0 left-0 w-full z-[1000] py-4 transition-all duration-500 ease-in-out pointer-events-none">
+      <nav
         aria-label="Main Navigation"
-        className="max-w-[1600px] w-full mx-auto flex items-center justify-between pointer-events-auto 
-                   bg-white/10 backdrop-blur-md border border-white/20 
-                   px-6 py-3 rounded-full shadow-lg"
+        className={`
+          mx-auto flex items-center justify-between transition-all duration-500 ease-in-out pointer-events-auto
+          ${
+            isScrolled
+              ? "max-w-[1200px] w-[90%] bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full shadow-lg"
+              : "max-w-full w-full bg-transparent border-transparent px-8 md:px-16 py-4 rounded-none shadow-none"
+          }
+        `}
       >
-        
         <Link href="/" aria-label="Home" className="flex no-underline">
           <NavLogo />
         </Link>
 
         <div className="flex items-center gap-4 md:gap-[28px]">
-          <button 
+          <button
             type="button"
             className="flex items-center gap-2 bg-[#3b6ef5] text-white border-none rounded-full 
                        px-4 py-2 md:px-5 md:py-[10px] 
@@ -42,7 +59,7 @@ const Navbar = () => {
           >
             <span>Start a Project</span>
             <Image
-              alt="" 
+              alt=""
               src="/images/clock.png"
               width={20}
               height={20}
@@ -50,7 +67,7 @@ const Navbar = () => {
             />
           </button>
 
-          <button 
+          <button
             type="button"
             aria-label="Open Menu"
             className="w-10 h-10 md:w-12 md:h-12 bg-[#f5a623] border-none rounded-full 

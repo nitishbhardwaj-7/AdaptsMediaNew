@@ -100,9 +100,9 @@ export default function RecognizedSection() {
       
       <div className="relative z-10 max-w-[1600px] px-8 md:px-20 w-full">
         {/* Header Section */}
-        <div className="flex flex-col min-[1300px]:flex-row min-[1300px]:items-end min-[1300px]:justify-between gap-12 mb-20">
+        <div className="flex flex-col min-[1300px]:flex-row min-[1300px]:items-end min-[1300px]:justify-between gap-4 mb-20">
           <div className="flex flex-col items-start">
-            <div className="flex items-center gap-4 mb-5">
+            <div className="flex items-center gap-1 mb-5">
               <span className="text-[10px] text-[#FAC02E] font-bold tracking-[0.2em] uppercase opacity-90">
                 Awards & Recognition
               </span>
@@ -139,7 +139,7 @@ export default function RecognizedSection() {
 
           {/* Changed gap to gap-y-12 for better vertical spacing when 
               wrapped during high zoom levels. */}
-          <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-6 md:gap-y-12 lg:gap-y-12">
+          <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-2 md:gap-y-12 lg:gap-y-12">
             
             {/* Sortlist */}
             <div className="relative w-48 h-20 shrink-0">

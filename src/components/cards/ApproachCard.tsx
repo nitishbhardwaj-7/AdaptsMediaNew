@@ -52,10 +52,10 @@ const ApproachCard = ({ steps }: { steps: Step[] }) => {
           </div>
 
           {/* Text Content */}
-          <h3 className="text-white font-bold tracking-widest text-xl mb-4 uppercase">
+          <h3 className="text-white font-bold tracking-widest text-lg md:text-xl mb-4 uppercase">
             {step.title}
           </h3>
-          <p className="text-white/60 text-lg leading-tight font-extralight px-2">
+          <p className="text-white/60 text-xs md:text-lg leading-tight font-extralight px-2">
             {step.description}
           </p>
           

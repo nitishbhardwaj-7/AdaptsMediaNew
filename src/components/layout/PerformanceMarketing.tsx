@@ -68,7 +68,7 @@ const PerformanceMarketing = () => {
     </motion.div>
 
     {/* 2. BOTTOM SECTION: Flex Wrapper */}
-    <div className="flex flex-col md:flex-row gap-12 md:gap-36 items-start">
+    <div className="flex flex-col min-[1200px]:flex-row gap-12 md:gap-36 items-start">
       
       {/* Content Column */}
       <div className="flex-grow w-full">
