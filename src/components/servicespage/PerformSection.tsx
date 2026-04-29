@@ -9,27 +9,27 @@ const approachSteps = [
   {
     title: "Discover",
     description: "We dive deep into your brand, market, and audience.",
-    icon: '' // Replace with your actual icon/svg
+    icon: '/images/services/discover.png'
   },
   {
     title: "Define",
     description: "We build a clear, actionable strategy aligned to your goals.",
-    icon: ''
+    icon: '/images/services/definenew.png'
   },
   {
     title: "Create",
     description: "We craft ideas, content, and experiences that connect.",
-    icon: ''
+    icon: '/images/services/create.png'
   },
   {
     title: "Deploy",
     description: "We execute across the right platforms with precision.",
-    icon: ''
+    icon: '/images/services/deploy.png'
   },
   {
     title: "Optimize",
     description: "We measure, learn, and continuously improve performance.",
-    icon: ''
+    icon: '/images/services/optimize.png'
   }
 ];
 // --- Sub-component for Award Cards ---

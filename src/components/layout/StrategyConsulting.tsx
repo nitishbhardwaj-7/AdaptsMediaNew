@@ -24,15 +24,9 @@ const StrategyConsulting = () => {
       // once: false means the animation resets when you scroll away
       // amount: 0.2 means it triggers when 20% of the section is visible
       viewport={{ once: false, amount: 0.8 }}
-      className="bg-[#064ED3] bg-gradient-to-br from-[#0052FF] relative to-[#0039CC] text-white flex flex-col w-full items-start justify-start md:items-center md:justify-center py-20 font-sans overflow-hidden"
+      className="bg-transparent relative text-white flex flex-col w-full items-start justify-start md:items-center md:justify-center py-20 font-sans overflow-hidden"
     >
-      <Image
-        src="/images/Services_Bg.png"
-        alt=""
-        fill
-        className="absolute z-10 pointer-events-none object-cover"
-      />
-
+  
       <div className="z-50 max-w-[1450px] w-full px-8 md:px-20">
         <div className="flex flex-col min-[1200px]:flex-row gap-12 md:gap-42 items-start">
           
@@ -40,31 +34,45 @@ const StrategyConsulting = () => {
 <div className="flex-shrink-0 md:sticky md:top-20">
   
   {/* THE SENSOR: This div never moves. It is the invisible trigger. */}
+  {/* THE SENSOR: Stays still to avoid jitter */}
   <motion.div
     initial="down"
     whileInView="up"
-    // Adjust amount/margin here. Because this div never moves, there is no jitter.
     viewport={{ once: false, amount: 0.6, margin: "-15% 0px -20% 0px" }}
     className="h-40 w-40 md:h-72 md:w-72 relative"
   >
-    {/* THE MOVER: This div handles the actual visual jump */}
+    {/* THE MOVER: Both images are now inside this animated div */}
     <motion.div
-      variants={{
-        down: { y: 0 },
-        up: { y: -80 }
-      }}
-      transition={{ 
-        duration: 1.2, // Smoother duration
-        ease: [0.22, 1, 0.36, 1] 
-      }}
-      className="w-full h-full"
-    >
-      <img
-        src="/images/rocket.webp"
-        className="w-full h-full object-contain"
-        alt="Rocket"
-      />
-    </motion.div>
+  initial="down"
+  whileInView="up"
+  viewport={{ once: false, amount: 0.6, margin: "-15% 0px -20% 0px" }}
+  className="w-full h-full relative"
+>
+  {/* 1. THE BACKGROUND IMAGE (Small Jump) */}
+  <motion.img 
+    src="/images/services/commonbg.png" 
+    variants={{
+      down: { y: 0 },
+      up: { y: -30 } // Much smaller jump
+    }}
+    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+    className="absolute inset-0 w-full h-full object-contain scale-150 z-0 opacity-50 pointer-events-none" 
+    style={{ filter: 'brightness(0)' }}
+    alt="Background" 
+  />
+
+  {/* 2. THE MAIN IMAGE (Large Jump) */}
+  <motion.img 
+    src="/images/services/i6.png" 
+    variants={{
+      down: { y: 0 },
+      up: { y: -80 } // Original jump
+    }}
+    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+    className="relative z-10 w-full h-full object-contain" 
+    alt="Rocket" 
+  />
+</motion.div>
   </motion.div>
 </div>
 

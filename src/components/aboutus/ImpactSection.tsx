@@ -6,25 +6,25 @@ const stats = [
   {
     number: "100+",
     label: "Brands Scaled",
-    icon: "/images/star.png", 
+    icon: "/images/aboutus/Star.png", 
     color: "text-[#0052FF]",
   },
   {
     number: "500+",
     label: "Campaigns Delivered",
-    icon: "/images/star.png",
+    icon: "/images/aboutus/Speaker.png",
     color: "text-[#0052FF]",
   },
   {
     number: "10+",
     label: "Industries Served",
-    icon: "/images/star.png",
+    icon: "/images/aboutus/Rocket.png",
     color: "text-[#0052FF]",
   },
   {
     number: "20+",
     label: "Digital Plaforms Managed",
-    icon: "/images/star.png",
+    icon: "/images/aboutus/Toy.png",
     color: "text-[#0052FF]",
   },
 ];
@@ -96,7 +96,7 @@ const ImpactSection = () => {
                     ease: "easeInOut",
                     delay: index * 0.5 
                   }}
-                  className="absolute -top-6 -right-12 w-20 h-20 md:w-24 md:h-24"
+                  className="absolute -top-20 -right-36 w-20 h-20 md:w-56 md:h-24"
                 >
                   <Image 
                     src={stat.icon} 

@@ -49,11 +49,11 @@ const AboutOrangeSection = () => {
          <div className="flex gap-6 xl:gap-10 mt-6 w-auto lg:w-auto lg:flex-shrink lg:justify-start">
             
           
-          <Image
-          src='/images/png-clipart-compass-compass-thumbnail-removebg-preview.png'
+          <video
+          src='/assets/moving compass_1.webm'
           width={800}
           height={60}
-          alt=''/>
+          />
           </div>
 
         </div>

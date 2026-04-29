@@ -37,7 +37,7 @@ const PublicRelations = () => {
        initial="hidden"
        whileInView="visible"
        viewport={{ once: true, amount: 0.2 }}
-       className="bg-[#064ED3] bg-gradient-to-br from-[#0052FF] to-[#0039CC] relative text-white py-20 font-sans overflow-hidden"
+       className="bg-transparent relative text-white py-20 font-sans overflow-hidden"
      >
        {/* Background Image */}
        <Image
@@ -76,32 +76,46 @@ const PublicRelations = () => {
            {/* RIGHT COLUMN: Image (Sticky) */}
            <div className="flex-shrink-0 md:sticky md:top-20">
         {/* THE SENSOR: This div stays perfectly still so it doesn't jitter */}
-        <motion.div
+        {/* THE SENSOR: Stays still to avoid jitter */}
+          <motion.div
+            initial="down"
+            whileInView="up"
+            viewport={{ once: false, amount: 0.6, margin: "-15% 0px -20% 0px" }}
+            className="h-40 w-40 md:h-72 md:w-72 relative"
+          >
+            {/* THE MOVER: Both images are now inside this animated div */}
+            <motion.div
           initial="down"
           whileInView="up"
-          // Starts lifting when 60% of this box is 20% into the screen
           viewport={{ once: false, amount: 0.6, margin: "-15% 0px -20% 0px" }}
-          className="h-40 w-40 md:h-72 md:w-72 relative"
+          className="w-full h-full relative"
         >
-          {/* THE MOVER: This div handles the actual vertical jump */}
-          <motion.div
+          {/* 1. THE BACKGROUND IMAGE (Small Jump) */}
+          <motion.img 
+            src="/images/services/commonbg.png" 
             variants={{
               down: { y: 0 },
-              up: { y: -80 }
+              up: { y: -30 } // Much smaller jump
             }}
-            transition={{ 
-              duration: 1.2, 
-              ease: [0.22, 1, 0.36, 1] 
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 w-full h-full object-contain scale-150 z-0 opacity-50 pointer-events-none" 
+            style={{ filter: 'brightness(0)' }}
+            alt="Background" 
+          />
+        
+          {/* 2. THE MAIN IMAGE (Large Jump) */}
+          <motion.img 
+            src="/images/services/i5.png" 
+            variants={{
+              down: { y: 0 },
+              up: { y: -80 } // Original jump
             }}
-            className="w-full h-full"
-          >
-            <img 
-              src="/images/rocket.webp" 
-              className="w-full h-full object-contain" 
-              alt="Rocket" 
-            />
-          </motion.div>
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-10 w-full h-full object-contain" 
+            alt="Rocket" 
+          />
         </motion.div>
+          </motion.div>
       </div>
      
          </div>

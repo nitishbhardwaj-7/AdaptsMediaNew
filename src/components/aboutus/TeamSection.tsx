@@ -50,9 +50,11 @@ const TeamSection = () => {
 
               {/* Top Right Plus Icon */}
               <div className="absolute top-5 right-5 z-20">
-                <span className="text-white text-5xl font-extralight opacity-60 group-hover:opacity-100 group-hover:text-[#FAC02E] transition-all duration-300">
-                  +
-                </span>
+                <Image
+                src='/images/aboutus/plusicon.png'
+                alt=''
+                width={30}
+                height={40}/>
               </div>
 
               {/* Background Pattern/Graphic Overlay */}

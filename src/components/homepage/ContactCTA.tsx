@@ -3,22 +3,31 @@ import Image from "next/image";
 const ContactCTA = () => {
   return (
     <section className="relative group overflow-hidden py-20 w-full flex flex-col items-center justify-center bg-[#c42a27]">
-      <Image
-        src="/images/ConnectBg.png" 
-        fill
-        alt="Decorative Element"
-        className="absolute z-10 pointer-events-none object-cover"
-      />
-      
-      {/* Background Handshake Image */}
-      <div 
-        className="absolute top-0 right-0 w-full md:w-1/2 h-full opacity-30 pointer-events-none mix-blend-luminosity bg-cover bg-center"
-        style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1521791136064-7986c2923216?auto=format&fit=crop&q=80&w=1000')`,
-          maskImage: 'linear-gradient(to left, black, transparent)',
-          WebkitMaskImage: 'linear-gradient(to left, black, transparent)'
-        }}
-      />
+      {/* 1. Background Image */}
+  <Image
+    src="/images/Awards_Bg.png"
+    fill
+    alt="Decorative Element"
+    className="absolute z-0 pointer-events-none object-cover"
+  />
+
+  {/* 2. Video Overlay */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    style={{
+    // This creates a smooth fade-out towards the edges
+    maskImage: 'radial-gradient(circle, black 50%, transparent 95%)',
+    WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 95%)',
+  }}
+    className="absolute z-10 top-1/2 -translate-y-1/2 right-0 w-[45%] h-[90%] object-cover opacity-50 mix-blend-multiply pointer-events-none"
+  >
+    <source src="/assets/video_bg5.mp4" type="video/mp4" />
+  </video>
+    
+     
 
       <div className="relative z-10 group max-w-[1600px] w-full px-8 md:px-20 items-start justify-start">
         <div className="flex flex-col gap-4 max-w-4xl">

@@ -28,6 +28,20 @@ const OrangeSection = () => {
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
+      <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute z-10 top-1/2 -translate-y-1/2 right-0 w-[50%] h-[70%] object-cover opacity-30 mix-blend-multiply pointer-events-none"
+    style={{
+      maskImage: 'radial-gradient(circle, black 30%, transparent 80%)',
+      WebkitMaskImage: 'radial-gradient(circle, black 30%, transparent 80%)',
+    }}
+  >
+    <source src="/assets/video_bg2.mp4" type="video/mp4" />
+  </video>
+
       <div className="relative z-20 max-w-[1600px] px-8 md:px-20">
         
         {/* Main Heading */}

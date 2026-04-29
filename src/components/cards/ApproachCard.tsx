@@ -44,12 +44,24 @@ const ApproachCard = ({ steps }: { steps: Step[] }) => {
                      transition-colors duration-300 min-h-[320px] justify-center"
         >
           {/* Icon Circle */}
-          <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-6 
-                          group-hover:border-white/50 transition-colors duration-300">
-            <div className="text-white w-6 h-6">
-              {step.icon}
-            </div>
-          </div>
+<div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-6 
+                group-hover:border-white/50 transition-colors duration-300 overflow-hidden">
+  <div className="text-white w-full h-full flex items-center justify-center">
+    {typeof step.icon === 'string' && step.icon !== '' ? (
+      <img 
+        src={step.icon} 
+        alt={step.title} 
+        className="w-8 h-8 object-contain" // Adjusted size to fit nicely in the circle
+      />
+    ) : (
+      // This will render the icon if you pass a component, 
+      // or show nothing/default if the string is empty
+      <span className="w-6 h-6 flex items-center justify-center">
+        {step.icon}
+      </span>
+    )}
+  </div>
+</div>
 
           {/* Text Content */}
           <h3 className="text-white font-bold tracking-widest text-lg md:text-xl mb-4 uppercase">

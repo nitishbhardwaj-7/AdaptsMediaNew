@@ -1,7 +1,14 @@
+import Image from "next/image";
+
 const ServicesHero = () => {
   return (
     <section className="relative min-h-[80vh] w-full overflow-hidden bg-gradient-to-br from-[#4c3592] via-[#e21b22] to-[#4c3592] flex items-center justify-center px-6 py-12 text-white md:px-16 lg:px-24">
-
+<Image
+              src="/images/services/HeroMaskGroup.png" 
+              alt=""
+              fill
+              className="absolute z-10 pointer-events-none object-cover" 
+            />
       {/* Hero Content */}
       <div className="grid grid-cols-1 gap-8 min-[1200px]:grid-cols-2 w-[1450px]">
         {/* Left Side */}
