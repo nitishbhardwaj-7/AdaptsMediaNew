@@ -1,6 +1,7 @@
 import BrandsSection from "@/components/homepage/BrandsSection"
 import ContactCTA from "@/components/homepage/ContactCTA"
 import Footer from "@/components/layout/Footer"
+import SocialBar from "@/components/layout/SocialBar"
 import ConnectedThinkingServices from "@/components/servicespage/ConnectedThinking"
 import PerformSection from "@/components/servicespage/PerformSection"
 import PortfolioSection from "@/components/servicespage/PortfolioSection"
@@ -15,6 +16,7 @@ const page = () => {
     <BrandsSection/>
     <PerformSection/>
     <ContactCTA/>
+    <SocialBar/>
     <Footer/>
     </div>
   )

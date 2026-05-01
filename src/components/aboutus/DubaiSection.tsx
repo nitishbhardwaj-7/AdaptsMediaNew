@@ -19,18 +19,13 @@ const DubaiSection = () => {
       {/* LAYER 0: The Base Background Image */}
       <motion.div 
         className="absolute inset-0 z-0"
-        variants={{
-          down: { y: 0 },
-          up: { y: bgLift } 
-        }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       >
         <Image
-          src="/images/groupwithbg.png" 
+          src="/images/aboutus/teambg.png" 
           alt="Background Base"
           fill
           priority
-          className="object-contain" // object-cover ensures no gaps during lift
+          className="object-cover" // object-cover ensures no gaps during lift
         />
       </motion.div>
 
@@ -46,7 +41,7 @@ const DubaiSection = () => {
         }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-0 flex items-start justify-center z-10 
-                   text-[20vw] mt-20 font-black text-white tracking-tighter leading-none select-none"
+                   text-[20vw] mt-55 font-black text-white tracking-tighter leading-none select-none"
       >
         DUBAI
       </motion.h1>
@@ -60,12 +55,12 @@ const DubaiSection = () => {
         }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="relative w-full h-[87%]">
+        <div className="relative w-full h-full">
           <Image
-            src="/images/grouppng.png" 
+            src="/images/aboutus/teampng.png" 
             alt="Team"
             fill
-            className="object-contain object-bottom"
+            className="object-cover mt-10 object-bottom"
             priority
           />
         </div>

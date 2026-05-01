@@ -32,7 +32,7 @@ const BlueSection = () => {
     className="absolute z-10 pointer-events-none object-cover" 
   />
   
-  <div className="max-w-[1600px] z-50 w-full px-8 md:px-20">
+  <div className="max-w-[1600px] relative z-50 w-full px-8 md:px-20">
     <motion.div className="mb-20" variants={fadeInUp}>
       <div className="flex gap-4 mb-6">
         <span className="text-[10px] tracking-[0.2em] font-bold uppercase opacity-80 text-[#FAC02E]">
@@ -97,13 +97,29 @@ const BlueSection = () => {
               }}
               className="w-full h-full"
             >
-              <Image 
-                src='/images/bulb.png'
-                width={600}
-                height={600}
-                alt="Strategy Bulb"
-                className="w-full h-full object-cover"
-              />
+            {/* Dual approach: SVG Filter + Mix Blend Mode */}
+            <svg width="0" height="0" className="absolute">
+              <defs>
+                <filter id="remove-black-bulb" colorInterpolationFilters="sRGB">
+                  <feColorMatrix type="matrix" 
+                    values="1 0 0 0 0
+                            0 1 0 0 0
+                            0 0 1 0 0
+                            10 10 10 0 -0.2" />
+                </filter>
+              </defs>
+            </svg>
+              <video 
+                src="/assets/newbulb.webm" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+                style={{ 
+                  filter: 'url(#remove-black-bulb)'
+                }}
+                className="w-full h-full scale-500 object-contain pointer-events-none"
+              ></video>
             </motion.div>
           </motion.div>
         </div>
