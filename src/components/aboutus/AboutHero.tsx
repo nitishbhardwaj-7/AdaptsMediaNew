@@ -7,6 +7,8 @@ const AboutHero = () => {
               src="/images/aboutus/HeroMask.png" 
               alt=""
               fill
+              priority={true}
+              sizes="100vw"
               className="absolute z-10 pointer-events-none object-cover" 
             />
       {/* Hero Content */}

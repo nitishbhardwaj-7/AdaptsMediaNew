@@ -25,6 +25,8 @@ const DubaiSection = () => {
           alt="Background Base"
           fill
           priority
+          sizes="100vw"
+          quality={80}
           className="object-cover" // object-cover ensures no gaps during lift
         />
       </motion.div>
@@ -60,6 +62,8 @@ const DubaiSection = () => {
             src="/images/aboutus/teampng.png" 
             alt="Team"
             fill
+            sizes="100vw"
+            quality={80}
             className="object-cover mt-10 object-bottom"
             priority
           />

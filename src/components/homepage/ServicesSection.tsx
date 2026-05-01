@@ -98,6 +98,8 @@ const ServicesSection = () => {
               src="/images/Services_Bg.png" 
               alt=""
               fill
+              sizes="100vw"
+              quality={80}
               className="absolute z-10 pointer-events-none object-cover" 
             />
       <div className="max-w-[1600px] z-50 w-full px-8 md:px-20">

@@ -3,6 +3,7 @@ import StatsCard from '../cards/StatCard';
 import ArrowButton from '../buttons/ArrowButton';
 import YellowButton from '../buttons/YellowButton';
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Helper for the reveal animation
 const RevealText = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => (
@@ -22,9 +23,13 @@ const OrangeSection = () => {
   return (
     <section className="relative w-full min-h-screen overflow-x-hidden flex items-center justify-center bg-[#c42a27] text-white py-20">
       
-      <img 
+      <Image 
         src="/images/About_Us_Bg.png" 
         alt="Background"
+        fill
+        priority
+        sizes="100vw"
+        quality={80}
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
 

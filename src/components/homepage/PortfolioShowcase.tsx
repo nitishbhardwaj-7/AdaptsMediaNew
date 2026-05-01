@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import ArrowButton from "../buttons/ArrowButton";
 import ArrowIcon from "../icons/ArrowIcon";
@@ -74,9 +74,14 @@ export default function PortfolioShowcase() {
               className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${active ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
             >
               {/* BG (Remains full-width of the card) */}
-              <div 
-                className={`absolute inset-0 bg-cover bg-center transition-transform duration-[8000ms] ease-in-out ${active ? "scale-[1.04]" : "scale-100"}`}
-                style={{ backgroundImage: `url(${p.bgImage})` }}
+              <Image
+                src={p.bgImage}
+                alt={p.brand}
+                fill
+                priority={i === 0}
+                sizes="100vw"
+                quality={85}
+                className={`object-cover transition-transform duration-[8000ms] ease-in-out ${active ? "scale-[1.04]" : "scale-100"}`}
               />
 
               {/* Overlays */}

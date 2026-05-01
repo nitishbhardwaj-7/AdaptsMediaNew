@@ -41,6 +41,8 @@ export default function PerformSection() {
               src="/images/Maskgroup.png" 
               alt="Decorative Element"
               fill
+              sizes="100vw"
+              quality={80}
               className="absolute z-10 pointer-events-none object-cover" 
             />
       
